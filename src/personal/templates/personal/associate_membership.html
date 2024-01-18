@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>Founding Trustees | Africa of Our Dreams Initiative</title>
+{% endblock title %}
+
+{% block navbar %}
+
+<!-- Main Site Navigation -->
+{% include 'personal/snippets/navbar-snippet.html' %}
+
+{% endblock navbar %}
+
+
+{% block slider %}
+
+  <div class="shadow container py-4 rounded-3">
+
+    <div class="p-5 mb-1 bg-light rounded-3">
+      <div class="container-fluid py-1">
+        <h1 class="display-5 fw-bold">Associate Membership &raquo</h1>
+        <p class="col-md-12 fs-6">Welcome to the associate membership page.</p>
+        <a href="{% url 'membership' %}" class="shadow btn btn-outline-success btn-sm" type="button">Membership &raquo</a>
+        
+      </div>
+    </div>
+
+  </div>
+
+{% endblock slider %}
+
+{% block content %}
+
+  
+  <section class="container mt-2">
+  <div class="row p-4">
+    <div class="shadow col-md-12 mx-auto p-5">
+      <div class="row">
+      <!-- <h4 class="fw-bold">About Africa of Our Dreams Initiative (AODI)</h4> -->
+      </div>
+      <div class="row" style="text-align: justify;">
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container mt-5">
+  <div class="container px-4 py-5" id="custom-cards">
+    <h2 class="pb-2 border-bottom">Associate Members [Coming Soon!]</h2>
+
+    
+
+
+    </div>
+  </div>
+</section>
+
+<!-- Donate and Join -->
+{% include 'personal/snippets/join-snippet.html' %}
+
+{% endblock content %}
+
+{% block footer %}
+
+<!-- Footer Navigation -->
+{% include 'personal/snippets/footer-snippet.html' %}
+
+{% endblock footer %}

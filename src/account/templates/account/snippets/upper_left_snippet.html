@@ -1,0 +1,16 @@
+{% load static %}
+<div class="dropdown">
+        <a href="{% url 'home' %}" class="d-flex align-items-center col-lg-4 mb-2 mb-lg-0 link-dark text-decoration-none dropdown-toggle" id="dropdownNavLink" data-bs-toggle="dropdown" aria-expanded="false">
+          <!-- <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg> -->
+          <img class="bi me-2" width="50" height="50" src="{% static 'images/newlogo.jpg' %}">
+        </a>
+        <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownNavLink">
+          <li><a class="dropdown-item active" href="{% url 'home' %}" aria-current="page">View Site</a></li>
+          {% if request.user.is_superuser %}
+          <li><a class="dropdown-item" href="{% url 'admin:index' %}" target="_blank">View Main Admin</a></li>
+          {% endif %}
+         <!--  <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#">Reports</a></li>
+          <li><a class="dropdown-item" href="#">Analytics</a></li> -->
+        </ul>
+      </div>

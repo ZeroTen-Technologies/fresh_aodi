@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Projects Category | Africa of Our Dreams Initiative</title>
+{% endblock title %}
+
+{% block navbar %}
+<div class="container-fluid">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-1 border-bottom">
+      <a href="{% url 'home' %}" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+        <!-- <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg> -->
+        <img class="bi me-2" width="50" height="50" src="{% static 'images/newlogo.jpg' %}">
+      </a>
+
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="{% url 'home' %}" class="nav-link px-2 link-success"><b>Home</b></a></li>
+        <li><a href="{% url 'about' %}" class="nav-link px-2 link-success"><b>About</b></a></li>
+        <li><a href="{% url 'projects' %}" class="nav-link px-2 link-dark"><b>Projects</b></a></li>
+        <li><a href="{% url 'outreach' %}" class="nav-link px-2 link-success"><b>Outreaches</b></a></li>
+        <li><a href="{% url 'blog' %}" class="nav-link px-2 link-success"><b>Blog</b></a></li>
+        <li><a href="{% url 'contact' %}" class="nav-link px-2 link-success"><b>Contact</b></a></li>
+        <li><a href="{% url 'donate' %}" class="nav-link px-2 link-success"><b>Donate</b></a></li>
+      </ul>
+      {% if request.user.is_authenticated %}
+      <div class="col-md-3 text-end">
+        <a href="{% url 'dashboard' %}" class="btn btn-outline-dark me-2">Dashboard</a>
+        <a href="{% url 'logout' %}" class="btn btn-warning">Sign Out</a>
+      </div>
+       {% else %}
+       <div class="col-md-3 text-end">
+        <a href="{% url 'login' %}" class="btn btn-outline-danger me-2">Login</a>
+        <a href="{% url 'signup' %}" class="btn btn-warning">Sign-up</a>
+      </div>
+      {% endif %} 
+    </header>
+  </div>
+{% endblock navbar %}
+
+{% block slider %}
+<div class="container py-4">
+
+    <div class="shadow p-5 mb-1 bg-light rounded-3">
+      <div class=" container-fluid py-1">
+        <h1 class="display-5 fw-bold">Projects Category &raquo</h1>
+        <p class="col-md-12 fs-6">Africa of Our Dreams Initiative Projects Categories Page. Watch out for our exciting categories here, Stay tuned!</p>
+        <a href="{% url 'projects' %}" class="shadow btn btn-outline-success btn-sm" type="button">All Projects &raquo</a>
+      </div>
+    </div>
+
+  </div>
+{% endblock slider %}
+
+{% block content %}
+<section class="container">
+  <div class="row">
+    {% for projectcat in projectcats %}
+    <div class="card m-2" style="width: 18rem;">
+      <div class="card-body">
+        <a class="nav-link" href="{% url 'project:detail_cat' projectcat.slug %}"><h5 class="card-title text-info fw-bold">{{projectcat.title}}</h5></a>
+        <p class="card-text">{{projectcat.body|truncatechars:100|safe}}</p>
+        <a href="{% url 'project:detail_cat' projectcat.slug %}" class="shadow btn btn-success btn-sm">View</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <br>
+  <!-- Pagination -->
+              <div class="d-grid gap-2 col-6 mx-auto">
+                <div class="btn-toolbar mb-3">
+                  <div class="btn-group me-2" >
+                    <a href="#" class="p-2 nav-link link-success fw-bold">&laquo Prev</a>
+                    <button type="button" class="btn btn-success border border-light rounded-3 fw-bold">1</button>
+                    <button type="button" class="btn btn-success border border-light rounded-3 fw-bold">2</button>
+                    <button type="button" class="btn btn-success border border-light rounded-3 fw-bold">3</button>
+                    <button type="button" class="btn btn-success border border-light rounded-3 fw-bold">4</button>
+                    <a href="#" class="p-2 nav-link link-success fw-bold">Next &raquo</a>
+                  </div>
+                </div>
+              </div>
+</section>
+{% endblock content %}
+
+{% block footer %}
+<!-- Footer Navigation -->
+{% include 'personal/snippets/footer-snippet.html' %}
+
+{% endblock footer %}

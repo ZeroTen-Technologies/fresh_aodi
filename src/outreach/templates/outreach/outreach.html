@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>Outreaches | Africa of Our Dreams Initiative</title>
+{% endblock title %}
+
+{% block navbar %}
+<!-- Main Site Navigation -->
+{% include 'personal/snippets/navbar-snippet.html' %}
+{% endblock navbar %}
+
+{% block slider %}
+<div class="shadow container py-4 rounded-3">
+
+    <div class="p-5 mb-1 bg-light rounded-3">
+      <div class="container-fluid py-1">
+        <h1 class="display-5 fw-bold">Our Outreaches &raquo</h1>
+        <p class="col-md-12 fs-6">Africa of Our Dreams Initiative Outreach Page. Watch out for our exciting topics here on our outreaches, Stay tuned!</p>
+      </div>
+    </div>
+
+  </div>
+{% endblock slider %}
+
+{% block content %}
+
+	
+<div class="container mb-5 mt-5">
+      <div class="row">
+        {% for outreach in outreaches %}
+      <div class="col-md-4">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" src="{{outreach.image.url}}" width="100%" height="225">
+            <div class="card-body">
+              <p class="card-text">{{outreach.body|truncatechars:150|safe}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="{% url 'outreach:detail' outreach.slug %}" class="btn btn-sm btn-outline-secondary">Read More</a>
+                  <a href="#" class="btn btn-sm btn-outline-secondary">Volunteer</a>
+                </div>
+                <small class="text-muted">{{ outreach.date_updated|date:"D d M Y" }}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+</div>
+
+
+<!-- Pagination -->
+              <div class="d-grid gap-2 col-6 mx-auto">
+                <div class="btn-toolbar mb-3">
+                  <div class="btn-group me-2" >
+                    <a href="#" class="p-2 nav-link link-success fw-bold">&laquo Prev</a>
+                    <button type="button" class="btn btn-success border border-light rounded-3 fw-bold">1</button>
+                    <button type="button" class="btn btn-success border border-light rounded-3 fw-bold">2</button>
+                    <button type="button" class="btn btn-success border border-light rounded-3 fw-bold">3</button>
+                    <button type="button" class="btn btn-success border border-light rounded-3 fw-bold">4</button>
+                    <a href="#" class="p-2 nav-link link-success fw-bold">Next &raquo</a>
+                  </div>
+                </div>
+              </div>
+
+</div>
+{% endblock content %}
+
+{% block footer %}
+<!-- Footer Navigation -->
+{% include 'personal/snippets/footer-snippet.html' %}
+
+{% endblock footer %}

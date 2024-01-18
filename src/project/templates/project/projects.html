@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>Projects | Africa of Our Dreams Initiative</title>
+{% endblock title %}
+
+{% block navbar %}
+<!-- Main Site Navigation -->
+{% include 'personal/snippets/navbar-snippet.html' %}
+{% endblock navbar %}
+
+{% block slider %}
+<div class="shadow container py-4 rounded-3">
+
+    <div class="p-5 mb-1 bg-light rounded-3">
+      <div class="container-fluid py-1">
+        <h1 class="display-5 fw-bold">Our Projects &raquo</h1>
+        <p class="col-md-12 fs-6">Africa of Our Dreams Initiative Project Page. Watch out for our exciting topics here on our projects, Stay tuned!</p>
+        <a href="{% url 'projects_category' %}" class="shadow btn btn-outline-success btn-sm" type="button">Project Categories &raquo</a>
+      </div>
+    </div>
+
+  </div>
+{% endblock slider %}
+
+{% block content %}
+
+	
+
+<section class="container mt-5">
+  <div class="container mt-2">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    {% for project in projects %}
+        <div class="col">
+          <div class="card" style="width: 20rem;">
+        <img src="{{project.image.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <strong class="d-inline-block mb-2 text-info"><a class="nav-link" href="{% url 'project:detail_cat' project.category.slug %}">{{ project.category }}</a></strong>
+          <h5 class="card-title">{{ project.title }}</h5>
+          <div class="mb-1 mt-1 text-muted">{{ project.date_updated|date:"D d M Y" }} {{ project.date_updated|time:"h:iA"|lower }}</div>
+          <p class="card-text">{{project.body|truncatechars:100|safe}}</p>
+          {% if project.amount %}
+           <p class="card-text"><small class="text-muted">Target Amount: {{project.currency}} {{project.amount}} </small></p>
+            {% else %}
+
+            {% endif %}
+            <div class="progress mb-3">
+            <div class="progress-bar bg-danger" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">Raised: 75%</div>
+          </div>
+          <a href="{% url 'project:detail' project.slug %}" class="shadow btn btn-outline-dark">Continue reading</a>
+        </div>
+      </div>
+        </div>
+    {% endfor %}
+  </div>
+  </div>
+  <br>
+  <!-- Pagination -->
+              <div class="d-grid gap-2 col-6 mx-auto">
+                <div class="btn-toolbar mb-3">
+                  <div class="btn-group me-2" >
+                    <a href="#" class="p-2 nav-link link-success fw-bold">&laquo Prev</a>
+                    <button type="button" class="btn btn-success border border-light rounded-3 fw-bold">1</button>
+                    <button type="button" class="btn btn-success border border-light rounded-3 fw-bold">2</button>
+                    <button type="button" class="btn btn-success border border-light rounded-3 fw-bold">3</button>
+                    <button type="button" class="btn btn-success border border-light rounded-3 fw-bold">4</button>
+                    <a href="#" class="p-2 nav-link link-success fw-bold">Next &raquo</a>
+                  </div>
+                </div>
+              </div>
+</section>
+
+{% endblock content %}
+
+{% block footer %}
+<!-- Footer Navigation -->
+{% include 'personal/snippets/footer-snippet.html' %}
+
+{% endblock footer %}

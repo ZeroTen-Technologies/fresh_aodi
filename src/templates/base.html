@@ -1,0 +1,48 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/newfavicon.ico' %}">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- reference your installed Font Awesome Free package's files here -->
+    <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <!-- Custom Css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}">
+    {% block title %}
+    
+    {% endblock title %}
+  </head>
+  <body class="bg-light bg-gradient">
+    
+    {% block navbar %}
+
+    {% endblock navbar %}
+
+    {% block slider %}
+
+    {% endblock slider %}
+
+    {% block content %}
+
+    {% endblock content %}
+    
+
+    {% block footer %}
+ <!-- Coookie Consent -->
+     <!--  <div class="cookie-consent">
+
+          <span>This site uses cookies to enhance user experience. see<a href="#" class="ml-1 text-decoration-none">Privacy policy</a> </span>
+          <div class="mt-2 d-flex align-items-center justify-content-center g-2">
+            <button class="allow-button mr-1">Allow cookies</button>
+            <button class="allow-button">cancel</button>
+          </div>
+
+          
+      </div> -->
+    {% endblock footer %}

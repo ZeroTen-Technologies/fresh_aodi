@@ -1,0 +1,77 @@
+{% load static %}
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-white p-2">
+ <div class="container-fluid">
+    
+      <a href="{% url 'home' %}" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+        <!-- <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg> -->
+        <img class="bi me-2" width="50" height="50" src="{% static 'images/newlogo.jpg' %}">
+      </a>
+
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        {% if request.get_full_path == '/' %}
+        <li><a href="{% url 'home' %}" class="nav-link px-2 link-success"><b>Home</b></a></li>
+        <li><a href="{% url 'about' %}" class="nav-link px-2 link-dark"><b>About</b></a></li>
+        <li><a href="{% url 'projects' %}" class="nav-link px-2 link-dark"><b>Projects</b></a></li>
+        <li><a href="{% url 'outreach' %}" class="nav-link px-2 link-dark"><b>Outreaches</b></a></li>
+        <li><a href="{% url 'blog' %}" class="nav-link px-2 link-dark"><b>Blog</b></a></li>
+        <li><a href="{% url 'contact' %}" class="nav-link px-2 link-dark"><b>Contact</b></a></li>
+        {% elif request.get_full_path == '/about' %}
+        <li><a href="{% url 'home' %}" class="nav-link px-2 link-dark"><b>Home</b></a></li>
+        <li><a href="{% url 'about' %}" class="nav-link px-2 link-success"><b>About</b></a></li>
+        <li><a href="{% url 'projects' %}" class="nav-link px-2 link-dark"><b>Projects</b></a></li>
+        <li><a href="{% url 'outreach' %}" class="nav-link px-2 link-dark"><b>Outreaches</b></a></li>
+        <li><a href="{% url 'blog' %}" class="nav-link px-2 link-dark"><b>Blog</b></a></li>
+        <li><a href="{% url 'contact' %}" class="nav-link px-2 link-dark"><b>Contact</b></a></li>
+        {% elif request.get_full_path == '/projects' %}
+        <li><a href="{% url 'home' %}" class="nav-link px-2 link-dark"><b>Home</b></a></li>
+        <li><a href="{% url 'about' %}" class="nav-link px-2 link-dark"><b>About</b></a></li>
+        <li><a href="{% url 'projects' %}" class="nav-link px-2 link-success"><b>Projects</b></a></li>
+        <li><a href="{% url 'outreach' %}" class="nav-link px-2 link-dark"><b>Outreaches</b></a></li>
+        <li><a href="{% url 'blog' %}" class="nav-link px-2 link-dark"><b>Blog</b></a></li>
+        <li><a href="{% url 'contact' %}" class="nav-link px-2 link-dark"><b>Contact</b></a></li>
+        {% elif request.get_full_path == '/outreach' %}
+        <li><a href="{% url 'home' %}" class="nav-link px-2 link-dark"><b>Home</b></a></li>
+        <li><a href="{% url 'about' %}" class="nav-link px-2 link-dark"><b>About</b></a></li>
+        <li><a href="{% url 'projects' %}" class="nav-link px-2 link-dark"><b>Projects</b></a></li>
+        <li><a href="{% url 'outreach' %}" class="nav-link px-2 link-success"><b>Outreaches</b></a></li>
+        <li><a href="{% url 'blog' %}" class="nav-link px-2 link-dark"><b>Blog</b></a></li>
+        <li><a href="{% url 'contact' %}" class="nav-link px-2 link-dark"><b>Contact</b></a></li>
+        {% elif request.get_full_path == '/blog' %}
+        <li><a href="{% url 'home' %}" class="nav-link px-2 link-dark"><b>Home</b></a></li>
+        <li><a href="{% url 'about' %}" class="nav-link px-2 link-dark"><b>About</b></a></li>
+        <li><a href="{% url 'projects' %}" class="nav-link px-2 link-dark"><b>Projects</b></a></li>
+        <li><a href="{% url 'outreach' %}" class="nav-link px-2 link-dark"><b>Outreaches</b></a></li>
+        <li><a href="{% url 'blog' %}" class="nav-link px-2 link-success"><b>Blog</b></a></li>
+        <li><a href="{% url 'contact' %}" class="nav-link px-2 link-dark"><b>Contact</b></a></li>
+        {% elif request.get_full_path == '/contact' %}
+        <li><a href="{% url 'home' %}" class="nav-link px-2 link-dark"><b>Home</b></a></li>
+        <li><a href="{% url 'about' %}" class="nav-link px-2 link-dark"><b>About</b></a></li>
+        <li><a href="{% url 'projects' %}" class="nav-link px-2 link-dark"><b>Projects</b></a></li>
+        <li><a href="{% url 'outreach' %}" class="nav-link px-2 link-dark"><b>Outreaches</b></a></li>
+        <li><a href="{% url 'blog' %}" class="nav-link px-2 link-dark"><b>Blog</b></a></li>
+        <li><a href="{% url 'contact' %}" class="nav-link px-2 link-success"><b>Contact</b></a></li>
+        {% else %}
+        <li><a href="{% url 'home' %}" class="nav-link px-2 link-dark"><b>Home</b></a></li>
+        <li><a href="{% url 'about' %}" class="nav-link px-2 link-dark"><b>About</b></a></li>
+        <li><a href="{% url 'projects' %}" class="nav-link px-2 link-dark"><b>Projects</b></a></li>
+        <li><a href="{% url 'outreach' %}" class="nav-link px-2 link-dark"><b>Outreaches</b></a></li>
+        <li><a href="{% url 'blog' %}" class="nav-link px-2 link-dark"><b>Blog</b></a></li>
+        <li><a href="{% url 'contact' %}" class="nav-link px-2 link-dark"><b>Contact</b></a></li>
+        {% endif %}
+      </ul>
+      {% if request.user.is_authenticated %}
+      <div class="col-md-3 text-end">
+        <a href="{% url 'dashboard' %}" class="btn btn-outline-dark me-2">Dashboard</a>
+        <a href="{% url 'logout' %}" class="btn btn-warning">Sign Out</a>
+      </div>
+       {% else %}
+       <div class="col-md-3 text-end">
+        <a href="{% url 'donate' %}" class="btn btn-danger rounded-pill w-50">Donate</a>
+      </div>
+      {% endif %} 
+   
+  </div>
+</nav>
+<br>
+<br>
+<br>

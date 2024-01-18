@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>Founding Trustees | Africa of Our Dreams Initiative</title>
+{% endblock title %}
+
+{% block navbar %}
+
+<!-- Main Site Navigation -->
+{% include 'personal/snippets/navbar-snippet.html' %}
+
+{% endblock navbar %}
+
+
+{% block slider %}
+
+  <div class="shadow container py-4 rounded-3">
+
+    <div class="p-5 mb-1 bg-light rounded-3">
+      <div class="container-fluid py-1">
+        <h1 class="display-5 fw-bold">Ambassadorial Membership &raquo</h1>
+        <p class="col-md-12 fs-6">Welcome to the ambassadorial membership page.</p>
+        <a href="{% url 'project_facilitators' %}" class="shadow btn btn-outline-success btn-sm" type="button">Project Facilitators &raquo</a>
+        <a href="{% url 'volunteers' %}" class="shadow btn btn-success btn-sm" type="button">Volunteer &raquo</a>
+      </div>
+    </div>
+
+  </div>
+
+{% endblock slider %}
+
+{% block content %}
+
+  
+  <section class="container mt-2">
+  <div class="row p-4">
+    <div class="shadow col-md-12 mx-auto p-5">
+      <div class="row">
+      <!-- <h4 class="fw-bold">About Africa of Our Dreams Initiative (AODI)</h4> -->
+      </div>
+      <div class="row" style="text-align: justify;">
+        <p>The ambassadorial memberships of the Africa of Our Dream Initiative (AODI) give those who would like to get involved with the foundation as non-voting members the opportunity to exercise their commitment to affecting lives positively through volunteering or facilitation of projects. AODI is committed to forming a network of passionate individuals who would like to make the world better by giving them a platform to get involved in community services and campaign that would change the lives of especially the less privileged, oppressed and the neglected in the society.
+        </p>
+        <p>Ambassadors of AODI are not paid. They form part of the corner staone of the foundation and so should be ready to carry themselves in such a manner as to bring honour and respect to the foundation and the the society they live. Making the world a better place is a task we must all get involved with and only when we come together to contribute no matter how little would the dream of a better future for all be actualized. We rely heavily on the community of our ambassadors to drive the changes we hope to see in our societies. As a way to recorgnise the great job our ambassadors will be doing, they are awarded the AMBASSADORIAL honour by the foundation as stipulated in the <a class="link-danger" href="{% url 'our_constitution' %}">constitution</a>.</p>
+        <p>Details of what each of the two ambassadorial memberships entails can be found at the <a href="{% url 'project_facilitators' %}" class="link-danger">Project Facilitators</a> and <a href="{% url 'volunteers' %}" class="link-danger">Volunteers</a> sections.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container mt-5">
+  <div class="container px-4 py-5" id="custom-cards">
+    <h2 class="pb-2 border-bottom">Ambassadorial Members [Coming Soon!]</h2>
+
+    
+
+
+    </div>
+  </div>
+</section>
+
+<!-- Donate and Join -->
+{% include 'personal/snippets/join-snippet.html' %}
+
+{% endblock content %}
+
+{% block footer %}
+
+<!-- Footer Navigation -->
+{% include 'personal/snippets/footer-snippet.html' %}
+
+{% endblock footer %}

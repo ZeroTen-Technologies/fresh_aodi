@@ -1,0 +1,172 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>{{blog_post.title }} | Africa of Our Dreams Initiative</title>
+{% endblock title %}
+
+{% block navbar %}
+<div class="shadow-sm container-fluid">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-1 border-bottom">
+      <a href="{% url 'home' %}" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+        <!-- <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg> -->
+        <img class="bi me-2" width="50" height="50" src="{% static 'images/newlogo.jpg' %}">
+      </a>
+
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="{% url 'home' %}" class="nav-link px-2 link-success"><b>Home</b></a></li>
+        <li><a href="{% url 'about' %}" class="nav-link px-2 link-success"><b>About</b></a></li>
+        <li><a href="{% url 'projects' %}" class="nav-link px-2 link-success"><b>Projects</b></a></li>
+        <li><a href="{% url 'outreach' %}" class="nav-link px-2 link-success"><b>Outreaches</b></a></li>
+        <li><a href="{% url 'blog' %}" class="nav-link px-2 link-dark"><b>Blog</b></a></li>
+        <li><a href="{% url 'contact' %}" class="nav-link px-2 link-success"><b>Contact</b></a></li>
+        <li><a href="{% url 'donate' %}" class="nav-link px-2 link-success"><b>Donate</b></a></li>
+      </ul>
+      {% if request.user.is_authenticated %}
+      <div class="col-md-3 text-end">
+        <a href="{% url 'dashboard' %}" class="btn btn-outline-dark me-2">Dashboard</a>
+        <a href="{% url 'logout' %}" class="btn btn-warning">Sign Out</a>
+      </div>
+       {% else %}
+       <div class="col-md-3 text-end">
+        <a href="{% url 'login' %}" class="btn btn-outline-danger me-2">Login</a>
+        <a href="{% url 'signup' %}" class="btn btn-warning">Sign-up</a>
+      </div>
+      {% endif %} 
+    </header>
+  </div>
+{% endblock navbar %}
+
+{% block slider %}
+<div class="shadow container py-4">
+
+    <div class="p-5 mb-1 bg-light rounded-3">
+      <div class="container-fluid py-1">
+        <h3 class="display-5 fw-bold">{{blog_post.title| capfirst }}</h3>
+        <p class="col-md-12 fs-6">Author: {{blog_post.author.first_name| capfirst}} {{blog_post.author.last_name}} | Date: {{blog_post.date_published|date:"D d M Y"}} {{blog_post.date_published|time:"h:iA"|lower}}</p>
+      </div>
+    </div>
+  </div>
+{% endblock slider %}
+
+{% block content %}
+<div class="container-fluid mt-5">
+
+	<div class="row">
+   <div class="col-md-8">
+     <div class="row p-5 pt-1 pb-2">
+   <img src="{{blog_post.image.url}}" class="w-100 h-25" > 
+  </div>
+  <div class="row">
+    <h3 class="text-center p-3">{{blog_post.title| capfirst}}</h3>
+  </div>
+  <div class="row p-5">
+    {{ blog_post.body | safe}}
+  </div>
+  <div class="row p-5">
+    <h4>Leave a Reply</h4>
+    {% if request.user.is_authenticated %}
+    <p>You are logged in as {{request.user.first_name| capfirst}} {{request.user.last_name}}!.</p>
+    <form method="post" action="{% url 'blog_comment' %}">{% csrf_token %}
+      <input name="blog_post_id" type="hidden" value="{{ blog_post.id }}">
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Comment:</label>
+        <textarea name="body" class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+      </div>
+      <div class="d-grid gap-2">
+        <button class="shadow btn btn-success" type="submit">Post Comment</button>
+      </div>
+    </form>
+    
+    <div class="row p-5">
+      {% for comment in comments %}
+          
+          <b>{{comment.author.first_name}} {{comment.author.last_name}} ({{comment.date_published}}):</b>
+          <p>{{comment.body}}</p>
+          <p>{{ comment.id }}</p>
+            
+              <p class="m-4">| this is a comment reply  <b></b></p>
+            
+          <form class="mb-3" method="post" action="{% url 'blog_comment_reply' %}">{% csrf_token %}
+              <input name="comment_type" type="hidden" value="{{ comment.id }}">
+              <input name="blog_post_id" type="hidden" value="{{ blog_post.id }}">
+              <textarea name="body" class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+           <br>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <button class="shadow btn btn-success me-md-2" type="submit">reply</button>
+            </div>
+          </form>
+           <hr>
+          
+      {% endfor %}
+    </div>
+
+
+    {% else %}
+    <p>You must be logged in to post a comment.</p>
+    {% endif %}
+  </div>
+   </div> 
+
+   <div class="col-md-4">
+     <div class="row">
+       <div class="col-md-10">
+         
+            <form>
+              
+              <input type="text" class="form-control mb-1" id="exampleFormControlInput1" placeholder="search...">
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button class="btn btn-success me-md-2" type="button">Search</button>
+                
+              </div>
+            </form>
+            <hr>
+       </div>
+       <div class="col-md-10 mt-3">
+         <h4 class="fw-bold text-success">Trending:</h4>
+         <div class="card" style="width: 18rem;">
+          <img src="{% static 'images/afrik.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <a href="#" class="nav-link link-dark"><h5 class="card-title">Card title</h5></a>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+        <hr>
+       </div>
+       <div class="col-md-10 mt-3">
+         <h4 class="fw-bold text-success">Recent:</h4>
+         {% for blog in blogs %}
+         <div class="card mb-3" style="width: 18rem; ">
+          <img src="{{blog.image.url}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <a href="{% url 'blog:detail' blog.slug %}" class="nav-link link-dark"><h5 class="card-title">{{blog.title}}</h5></a>
+            <p class="card-text">{{blog.body|truncatechars:50|safe}}</p>
+          </div>
+        </div>
+        {% endfor %}
+        <hr>
+       </div>
+       <div class="col-md-10 mt-3">
+         <h4 class="fw-bold text-success">AODI on Camera:</h4>
+         <div class="card" style="width: 18rem;">
+          <img src="{% static 'images/afrik.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <a href="#" class="nav-link link-dark"><h5 class="card-title">Card title</h5></a>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+        <hr>
+       </div>
+     </div>
+   </div> 
+   
+  </div>
+
+</div>
+
+{% endblock content %}
+
+{% block footer %}
+<!-- Footer Navigation -->
+{% include 'personal/snippets/footer-snippet.html' %}
+
+{% endblock footer %}

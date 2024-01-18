@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>Login | Africa of Our Dreams Initiative</title>
+{% endblock title %}
+
+
+{% block content %}
+<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+    <div class="row align-items-center g-lg-5 py-5">
+      <div class="col-lg-7 text-center text-lg-start">
+        <h1 class="display-4 fw-bold lh-1 mb-3">Welcome Back!</h1>
+        <p class="col-lg-10 fs-4">Africa of Our Dreams Initiative (AODI)</p>
+      </div>
+      <div class="col-md-10 mx-auto col-lg-5">
+        <form class="p-4 p-md-5 border rounded-3 bg-light" method="post">{% csrf_token %}
+
+          {% for field in login_form %}
+              {% for error in field.errors %}
+                  <p style="color: red;">{{error}}</p>
+              {% endfor %}
+          {% endfor %}
+
+          {% if login_form.non_field_errors %}
+              <div style="color: red">
+                  <p>{{login_form.non_field_errors}}</p>
+              </div>
+          {% endif %}
+
+          <div class="form-floating mb-3">
+            <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+          </div>
+          <!-- <div class="checkbox mb-3">
+            <label>
+              <input type="checkbox" value="remember-me"> Remember me
+            </label>
+          </div> -->
+          <button class="w-100 btn btn-lg btn-success" type="submit">Login</button>
+          <hr class="my-4">
+          <small class="text-muted">Register <a href="{% url 'signup' %}">Here</a> if you don't have an account with us</small><br>
+          <small class="text-muted"><a href="{% url 'password_reset' %}">Forgot Password?</a></small>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock content%}

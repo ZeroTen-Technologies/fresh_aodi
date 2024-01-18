@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>Make Payment | Africa of Our Dreams Initiative</title>
+{% endblock title %}
+
+{% block navbar %}
+
+<!-- Main Site Navigation -->
+{% include 'personal/snippets/navbar-snippet.html' %}
+
+{% endblock navbar %}
+
+
+{% block slider %}
+
+  <div class="shadow container py-4 rounded-3">
+
+    <div class="p-5 mb-1 bg-light rounded-3">
+      <div class="container-fluid py-1">
+        <h1 class="display-5 fw-bold">Make Payment &raquo</h1>
+        <p class="col-md-12 fs-6">The unfortunate need people who will be kind to them; the prosperous need people to be kind to - Aristotle.</p>
+        <a href="#" class="shadow btn btn-outline-success btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Our Bank Details &raquo</a>
+        <a href="#" class="shadow btn btn-success btn-sm" type="button">Paypal &raquo</a>
+      </div>
+
+
+      <!-- Button trigger modal -->
+      <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Launch demo modal
+      </button> -->
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <!-- <div class="modal-dialog modal-dialog-centered"> -->
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title fw-bold" id="exampleModalLabel">Our Bank Details:</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success btn-sm" data-bs-dismiss="modal">Close</button>
+              <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      var myModal = document.getElementById('myModal')
+      var myInput = document.getElementById('myInput')
+
+      myModal.addEventListener('shown.bs.modal', function () {
+        myInput.focus()
+      })
+    </script>
+  </div>
+
+{% endblock slider %}
+
+{% block content %}
+
+  
+  <section class="container mt-2">
+  <div class="row p-4">
+    <div class="shadow col-md-12 mx-auto p-5">
+      <div class="row">
+      <!-- <h4 class="fw-bold">About Africa of Our Dreams Initiative (AODI)</h4> -->
+      </div>
+      <div class="row" style="text-align: justify;">
+        <p class="fw-bold">Your £ 1 contribution could be the reason a child with no hope could secure a bright future and save many others from the stronghold of poverty and neglect. Don’t underestimate the strength of those little donations.</p>
+        <div class="shadow col-md-6 mx-auto p-5 mb-5">
+          <form method="post" action="{% url 'process_pay' %}"> {% csrf_token %}
+            <input type="hidden" name="item" value="normal">
+            <input type="hidden" name="item_title" value="donation">
+            <input type="hidden" name="item_num" value="regular">
+            <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Full Name</label>
+            <input name="full_name" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter fullname...">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput2" class="form-label">Email address</label>
+            <input name="email" type="email" class="form-control" id="exampleFormControlInput2" placeholder="name@example.com">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput3" class="form-label">Currency Initials</label>
+            <input name="currency" type="text" class="form-control" id="exampleFormControlInput3" placeholder="e.g USD, GBP, NGN etc">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput3" class="form-label">Amount</label>
+            <input name="amount" type="text" class="form-control" id="exampleFormControlInput3" placeholder="e.g 100">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Comment:</label>
+            <textarea name="body" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+          <div class="d-grid gap-2">
+            <button class="btn btn-success" type="submit">Donate</button>
+          </div>
+          </form>
+        </div>
+        <p>Should you have any question, please feel free to contact us using our <a class="nav-link link-danger" href="{% url 'contact' %}">contact details here.</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+{% endblock content %}
+
+{% block footer %}
+
+<!-- Footer Navigation -->
+{% include 'personal/snippets/footer-snippet.html' %}
+
+{% endblock footer %}

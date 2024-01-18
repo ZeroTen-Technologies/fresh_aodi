@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>Blogs | Africa of Our Dreams Initiative</title>
+{% endblock title %}
+
+{% block navbar %}
+<!-- Main Site Navigation -->
+{% include 'personal/snippets/navbar-snippet.html' %}
+{% endblock navbar %}
+
+{% block slider %}
+<div class="container py-4">
+
+    <div class="shadow p-5 mb-1 bg-light rounded-3">
+      <div class=" container-fluid py-1">
+        <h1 class="display-5 fw-bold">Our Blog &raquo</h1>
+        <p class="col-md-12 fs-6">Africa of Our Dreams Initiative Blog Page. Watch out for our exciting topics here on our blog, Stay tuned!</p>
+      </div>
+    </div>
+
+  </div>
+{% endblock slider %}
+
+{% block content %}
+<div class="container-fluid">
+	<div class="row row-cols-1 row-cols-md-3 g-4 p-5">
+		{% for blog in blogs %}
+  <div class="col">
+    <div class="card h-100">
+      <img src="{{blog.image.url}}" class="card-img-top h-50" alt="..." >
+      <div class="card-body">
+        <a href="{% url 'blog:detail' blog.slug %}" class="nav-link link-dark"><h5 class="card-title">{{blog.title}}</h5></a>
+        <h6 class="card-subtitle mb-2 text-muted">Author: {{blog.author.first_name}} {{blog.author.last_name}}</h6>
+        <p class="card-text">{{blog.body|truncatechars:100|safe}}</p>
+        <a href="{% url 'blog:detail' blog.slug %}" class="btn btn-success d-grid">Read More</a>
+      </div>
+      <div class="card-footer">
+      	{% if blog.date_updated %}
+        <small class="text-muted">Last Updated: {{blog.date_updated}}</small>
+        {% else %}
+        <small class="text-muted">Published: {{blog.date_published}}</small>
+        {% endif %} 
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+  
+</div>
+<!-- Pagination -->
+              <div class="d-grid gap-2 col-6 mx-auto">
+                <div class="btn-toolbar mb-3">
+                  <div class="btn-group me-2" >
+                    <a href="#" class="p-2 nav-link link-success fw-bold">&laquo Prev</a>
+                    <button type="button" class="btn btn-success border border-light rounded-3 fw-bold">1</button>
+                    <button type="button" class="btn btn-success border border-light rounded-3 fw-bold">2</button>
+                    <button type="button" class="btn btn-success border border-light rounded-3 fw-bold">3</button>
+                    <button type="button" class="btn btn-success border border-light rounded-3 fw-bold">4</button>
+                    <a href="#" class="p-2 nav-link link-success fw-bold">Next &raquo</a>
+                  </div>
+                </div>
+              </div>
+
+</div>
+{% endblock content %}
+
+{% block footer %}
+<!-- Footer Navigation -->
+{% include 'personal/snippets/footer-snippet.html' %}
+
+{% endblock footer %}

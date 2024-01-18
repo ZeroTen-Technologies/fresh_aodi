@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>{{outreach_post.title }} | Africa of Our Dreams Initiative</title>
+{% endblock title %}
+
+{% block navbar %}
+<div class="shadow-sm container-fluid">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-1 border-bottom">
+      <a href="{% url 'home' %}" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+        <!-- <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg> -->
+        <img class="bi me-2" width="50" height="50" src="{% static 'images/newlogo.jpg' %}">
+      </a>
+
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="{% url 'home' %}" class="nav-link px-2 link-success"><b>Home</b></a></li>
+        <li><a href="{% url 'about' %}" class="nav-link px-2 link-success"><b>About</b></a></li>
+        <li><a href="{% url 'projects' %}" class="nav-link px-2 link-success"><b>Projects</b></a></li>
+        <li><a href="{% url 'outreach' %}" class="nav-link px-2 link-dark"><b>Outreaches</b></a></li>
+        <li><a href="{% url 'blog' %}" class="nav-link px-2 link-success"><b>Blog</b></a></li>
+        <li><a href="{% url 'contact' %}" class="nav-link px-2 link-success"><b>Contact</b></a></li>
+        <li><a href="{% url 'donate' %}" class="nav-link px-2 link-success"><b>Donate</b></a></li>
+      </ul>
+      {% if request.user.is_authenticated %}
+      <div class="col-md-3 text-end">
+        <a href="{% url 'dashboard' %}" class="btn btn-outline-dark me-2">Dashboard</a>
+        <a href="{% url 'logout' %}" class="btn btn-warning">Sign Out</a>
+      </div>
+       {% else %}
+       <div class="col-md-3 text-end">
+        <a href="{% url 'login' %}" class="btn btn-outline-danger me-2">Login</a>
+        <a href="{% url 'signup' %}" class="btn btn-warning">Sign-up</a>
+      </div>
+      {% endif %} 
+    </header>
+  </div>
+{% endblock navbar %}
+
+{% block slider %}
+<div class="shadow container py-4">
+
+    <div class="p-5 mb-1 bg-light rounded-3">
+      <div class="container-fluid py-1">
+        <h3 class="display-5 fw-bold">{{outreach_post.title }}</h3>
+        <p class="col-md-12 fs-6">Published By: {{outreach_post.author.first_name}} {{outreach_post.author.last_name}} | Date: {{outreach_post.date_published|date:"D d M Y"}} {{outreach_post.date_published|time:"h:iA"|lower}}</p>
+      </div>
+      <a href="{% url 'donate' %}" class="btn btn-outline-success btn-sm shadow" type="button"> Donate</a>
+        <a href="{% url 'volunteers' %}" class="btn btn-success btn-sm shadow" type="button">Volunteer</a>
+    </div>
+
+  </div>
+{% endblock slider %}
+
+{% block content %}
+<div class="container-fluid mt-5">
+	<div class="row p-5 pt-1 pb-2">
+   <img src="{{outreach_post.image.url}}" width="100%" > 
+  </div>
+  <div class="row p-5">
+    {{ outreach_post.body | safe}}
+  </div>
+  <div class="row p-5">
+    <h4>Leave a Reply</h4>
+    {% if request.user.is_authenticated %}
+    <p>You are logged in as {{request.user.first_name}} {{request.user.last_name}}!.</p>
+    <form method="post" action="#">{% csrf_token %}
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Comment:</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+      </div>
+      <div class="d-grid gap-2">
+        <button class="shadow btn btn-success" type="button">Post Comment</button>
+      </div>
+    </form>
+    {% else %}
+    <p>You must be logged in to post a comment.</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock content %}
+
+{% block footer %}
+<!-- Footer Navigation -->
+{% include 'personal/snippets/footer-snippet.html' %}
+
+{% endblock footer %}

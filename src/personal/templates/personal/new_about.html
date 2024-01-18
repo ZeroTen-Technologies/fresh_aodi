@@ -1,0 +1,399 @@
+{% extends 'app.html' %}
+{% load static %}
+{% block title %}
+<title>About | Africa of Our Dreams Initiative</title>
+{% endblock title %}
+
+{% block banner %}
+<!--====== Breadcrumb part Start ======-->
+    <section class="breadcrumb-section bg-img-c" style="background-image: url({% static 'assets/img/breadcrumb.jpg' %});">
+        <div class="container">
+            <div class="breadcrumb-text">
+                <h1 class="page-title">About Us</h1>
+                
+            </div>
+        </div>
+        <div class="breadcrumb-shapes">
+            <div class="one"></div>
+            <div class="two"></div>
+            <div class="three"></div>
+        </div>
+    </section>
+    <!--====== Breadcrumb part End ======-->
+{% endblock banner %}
+
+{% block content %}
+<!--====== About Section start ======-->
+    <section class="about-section about-illustration-img section-gap">
+        <div class="container">
+            <div class="illustration-img">
+                <img src="{% static 'assets/img/illustration/01.png' %}" alt="Image">
+            </div>
+            <div class="row no-gutters justify-content-lg-end justify-content-center">
+                <div class="col-lg-6 col-md-10">
+                    <div class="about-text">
+                        <div class="section-title left-border mb-40">
+                            <span class="title-tag">About Us</span>
+                            <h2 class="title">AODI <br> Africa of Our Dreams Initiative </h2>
+                        </div>
+                        <p class="mb-25">
+                            Vision & Mission: To build a new Africa where individuals will thrive and have access to the necessary things of life by promoting, supporting and investing in health, education and opportunities as well as in human capital for sustained prosperity.
+                        </p>
+                        <p>
+                            The goals of AODI is based on the premise that if we invest in health, education and opportunities as well as in the human capital, invariably we lay the foundation for sustained prosperity.
+                        </p>
+                        <ul class="about-list">
+                            <li> <i class="far fa-check"></i> Women Empowerment</li>
+                            <li> <i class="far fa-check"></i>  Youth Empowerment</li>
+                            <li> <i class="far fa-check"></i>   Access to quality education</li>
+                            <li> <i class="far fa-check"></i>   Access to quality Medicare
+</li>
+                        </ul>
+                        <a href="about" class="main-btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====== About Section end ======-->
+
+    <!--====== Service Section Start ======-->
+    <section class="service-section grey-bg service-line-shape section-gap">
+        <div class="container">
+            <!-- Section Title -->
+            <div class="section-title text-center both-border mb-50">
+                <span class="title-tag">What we do</span>
+                <h2 class="title">Africa of Our Dream Education Initiative</h2>
+            </div>
+            <!-- Services Boxes -->
+            <div class="row service-boxes justify-content-center">
+                <div class="col-lg-3 col-sm-6 col-10 wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="400ms">
+                    <div class="service-box-three border-0">
+                        <div class="icon">
+                            <img src="{% static 'assets/img/icons/01.png' %}" alt="Icon">
+                        </div>
+                        <h3><a href="outreach">Outreaches</a></h3>
+                        <p>Sed perspicia unde omnis</p>
+                        <a href="outreach" class="service-link">
+                            <i class="fal fa-long-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-10 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="500ms">
+                    <div class="service-box-three border-0">
+                        <div class="icon">
+                            <img src="{% static 'assets/img/icons/02.png' %}" alt="Icon">
+                        </div>
+                        <h3><a href="projects">Our Projects</a></h3>
+                        <p>Quis autem velrepres hend</p>
+                        <a href="projects" class="service-link">
+                            <i class="fal fa-long-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-10 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="600ms">
+                    <div class="service-box-three border-0">
+                        <div class="icon">
+                            <img src="{% static 'assets/img/icons/03.png' %}" alt="Icon">
+                        </div>
+                        <h3><a href="membership">Membership</a></h3>
+                        <p>Sed perspicia unde omnis</p>
+                        <a href="membership" class="service-link">
+                            <i class="fal fa-long-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-10 wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="700ms">
+                    <div class="service-box-three border-0">
+                        <div class="icon">
+                            <img src="{% static 'assets/img/icons/04.png' %}" alt="Icon">
+                        </div>
+                        <h3><a href="#">Workshop</a></h3>
+                        <p>Quis autem velrepres hend</p>
+                        <a href="#" class="service-link">
+                            <i class="fal fa-long-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="line-one">
+            <img src="{% static 'assets/img/lines/12.png' %}" alt="line-shape">
+        </div>
+        <div class="line-two">
+            <img src="{% static 'assets/img/lines/11.png' %}" alt="line-shape">
+        </div>
+    </section>
+    <!--====== Service Section End ======-->
+
+    <!--====== Advanced Tabs Section Start ======-->
+    <section class="advanced-tab section-gap">
+        <div class="container">
+            <!-- Tabs Buttons -->
+            <div class="tab-buttons">
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="active" id="nav-mission" data-toggle="tab" href="#tab-mission" role="tab">Our Mission &
+                        Vision</a>
+                    <a id="nav-history" data-toggle="tab" href="#tab-history" role="tab">Objectives</a>
+                    <a id="nav-business" data-toggle="tab" href="#tab-business" role="tab">Constitution</a>
+                    <a id="nav-team" data-toggle="tab" href="#tab-team" role="tab">Membership</a>
+                </div>
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="tab-mission" role="tabpanel">
+                        <div class="tab-text-block left-image with-left-circle">
+                            <div class="row align-items-center justify-content-center">
+                                <div class="col-lg-6 col-md-10">
+                                    <div class="block-image">
+                                        <img src="{% static 'assets/img/tab-block.jpg' %}" alt="Image">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-10">
+                                    <div class="block-text">
+                                        <h2 class="title">AODI Vision & Mission</h2>
+                                        <p>
+                                            To build a new Africa where individuals will thrive and have access to the necessary things of life by promoting, supporting and investing in health, education and opportunities as well as in human capital for sustained prosperity.
+                                        </p>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tab-history" role="tabpanel">
+                        <div class="tab-text-block right-image with-right-circle">
+                            <div class="row align-items-center justify-content-center">
+                                <div class="col-lg-6 col-md-10 order-2 order-lg-1">
+                                    <div class="block-text">
+                                        <h2 class="title">Aims and Objectives</h2>
+                                        <p>
+                                            Building a new Africa would mean creating a society where individuals will be able to thrive and at least have access to the basic things of life. The goals of AODI is based on the premise that if we invest in health, education and opportunities as well as in the human capital, invariably we lay the foundation for sustained prosperity. To this end, the aims and objectives of AODI is summarily
+
+										<blockquote>“Youth and women empowerment through education and capacity building.”</blockquote>
+										The foundation shall pursue this objective in four different ways as listed below bearing in mind the great quote by Joseph Addison.
+
+										<blockquote>Education is a companion which no misfortune can depress, no crime can destroy, no enemy can alienate, no despotism can enslave. At home, a friend, abroad, an introduction, in solitude a solace and in society an ornament. It chastens vice, it guides virtue, it gives at once grace and government to genius. Without it, what is man? A splendid slave, a reasoning savage.</blockquote>
+
+										- Joseph Addison
+                                        </p>
+                                        <ul>
+                                            <li>
+                                                <i class="fas fa-check"></i>
+                                                Women empowerment: The foundation shall run activities to empower the girl child and women in general while campaigning against gender-based violence and promoting gender balance, education for the girl child, equal opportunity for girls with their male counterparts.
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-check"></i>
+                                                Youth empowerment: The foundation shall run activities that aim to empower less privileged youths in the society. The action plan will include but not limited to skill workshops, training on skills related to information communication technology (ICT), entrepreneurial activities etc., all aimed at human capacity development.
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-check"></i>
+                                                Access to quality education: The foundation shall run activities that encourage children and adults to acquire sound education. Where possible, education materials, infrastructures, equipment, scholarships information, and engagements that would guarantee quality education for all will be carried out. Emphasis will be on Science Technology Engineering and Mathematics (STEM) education.
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-check"></i>
+                                                Access to quality Medicare: The foundation shall run activities that would help the less privileged access quality healthcare. Where possible, medicine and medical equipment can be provided among other things to ensure that people have access to quality health care irrespective of their status. Priority will be given to terminal as well as communicable diseases.
+                                            </li>
+                                        </ul>
+                                        <p>
+                                        	In the pursuit of our causes, AODI will always remember other great quotes relating to education by great men like kofi Annan, Nelson Mandela and Malcom X.
+
+<blockquote>Knowledge is power. Information is liberating. Education is the premise of progress, in every society, in every family.
+
+- kofi Annan</blockquote>
+<blockquote>Education is the most powerful weapon which you can use to change the world.
+
+- Nelson Mandela</blockquote>
+<blockquote>Education is the passport to the future, for tomorrow belongs to those who prepare for it today.
+
+- Malcolm X</blockquote>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-10 order-1 order-lg-2">
+                                    <div class="block-image">
+                                        <img src="{% static 'assets/img/tab-block.jpg' %}" alt="Image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tab-business" role="tabpanel">
+                        <div class="tab-text-block left-image with-left-circle">
+                            <div class="row align-items-center justify-content-center">
+                                <div class="col-lg-6 col-md-10">
+                                    <div class="block-image">
+                                        <img src="{% static 'assets/img/tab-block.jpg' %}" alt="Image">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-10">
+                                    <div class="block-text">
+                                        <h2 class="title">Foundation Constitution</h2>
+                                        <p>
+                                            The activities of Africa of Our Dream is fully regulated by her constitution. The constitution is designed to ensure high accountability and transparency in the running of the foundation. The board of governors and trustees of Africa of Our Dream Initiative will continue to ensure that the aims and objectives of the foundation are fully actualized for sustained prosperity of the African people and the world at large.
+
+We, therefore, employ all people of goodwill to support our initiatives, <a href="donate">donate</a> or join our <a href="ambassadors">Ambassadors </a> membership as a volunteer or project facilitator.
+
+The constitution of the foundation can be accessed <a href="AODI_constitution.pdf">here</a>.
+
+
+                                        </p>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tab-team" role="tabpanel">
+                        <div class="tab-text-block right-image with-right-circle">
+                            <div class="row align-items-center justify-content-center">
+                                <div class="col-lg-6 col-md-10 order-2 order-lg-1">
+                                    <div class="block-text">
+                                        <h2 class="title">AODI Membership</h2>
+                                        <p>
+                                            Africa of Our dream Initiative has two significant membership forms – Voting membership and non-voting membership. Only the foundation trustees are eligible for voting membership. They include the members of the governing boards.
+
+Non-voting memberships include the ambassadorial membership and the associate membership. The ambassadorial membership comprises the project facilitators and volunteers and is open to anyone who is committed to improving the lives of others through various humanitarian services.
+                                        </p>
+                                        <ul>
+                                            <li>
+                                                <i class="fas fa-check"></i>
+                                                Governing Board: The board of governors is the highest decision-making body of the foundation and incorporates all the principal officers of the foundation made up of the founding trustees
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-check"></i>
+                                                Ambassadorial membership
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-check"></i>
+                                                Associate membership
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-10 order-1 order-lg-2">
+                                    <div class="block-image">
+                                        <img src="{% static 'assets/img/tab-block.jpg' %}" alt="Image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====== Advanced Tabs Section End ======-->
+
+    <!--====== Video Start ======-->
+    <section class="video-section-two bg-img-c" style="background-image: url({% static 'assets/img/video-bg/video-2.jpg' %});">
+        <div class="container">
+            <div class="row align-content-center justify-content-center">
+                <div class="col-lg-10">
+                    <div class="video-cont text-center">
+                        <a href="https://www.youtube.com/watch?v=fEErySYqItI"
+                            class="play-btn popup-video wow fadeInLeft" data-wow-duration="1500ms"
+                            data-wow-delay="400ms"><i class="fas fa-play"></i></a>
+                        <h2>
+                            AODI on Camera
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="line-shape-one">
+            <img src="{% static 'assets/img/lines/12.png' %}" alt="Line">
+        </div>
+        <div class="line-shape-two">
+            <img src="{% static 'assets/img/lines/11.png' %}" alt="Line">
+        </div>
+    </section>
+    <!--====== Video end ======-->
+
+    <!--====== Testimonials Section start ======-->
+    <section class="testimonial-section-three no-bg">
+        <div class="container">
+            <div class="row justify-content-center no-gutters">
+                <div class="col-lg-10">
+                    <div class="testimonial-items" id="testimonialSliderThree">
+                        <div class="testimonial-item text-center">
+                            <div class="author-thumb">
+                                <img src="{% static 'assets/img/testimonial/author-9.png' %}" alt="image">
+                            </div>
+
+                            <div class="content">
+                                <p>
+                                    <span class="quote-top">
+                                        <i class="fal fa-quote-left"></i>
+                                    </span>
+                                    Sedut perspiciatis unde omniiste natus errorsit voluptatem accusant doloremque
+                                    laudantium, totam rem aperiam, eaque ipsa quae ab ilinventore veritatis et quasi
+                                    architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
+                                    <span class="quote-bottom">
+                                        <i class="fal fa-quote-right"></i>
+                                    </span>
+                                </p>
+                            </div>
+
+                            <div class="author">
+                                <h4>Richard E. Harrisona</h4>
+                                <span>CEO & Founder</span>
+                            </div>
+                        </div>
+                        <div class="testimonial-item text-center">
+                            <div class="author-thumb">
+                                <img src="{% static 'assets/img/testimonial/author-9.png' %}" alt="image">
+                            </div>
+
+                            <div class="content">
+                                <p>
+                                    <span class="quote-top">
+                                        <i class="fal fa-quote-left"></i>
+                                    </span>
+                                    Sedut perspiciatis unde omniiste natus errorsit voluptatem accusant doloremque
+                                    laudantium, totam rem aperiam, eaque ipsa quae ab ilinventore veritatis et quasi
+                                    architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
+                                    <span class="quote-bottom">
+                                        <i class="fal fa-quote-right"></i>
+                                    </span>
+                                </p>
+                            </div>
+
+                            <div class="author">
+                                <h4>Richard E. Harrisona</h4>
+                                <span>CEO & Founder</span>
+                            </div>
+                        </div>
+                        <div class="testimonial-item text-center">
+                            <div class="author-thumb">
+                                <img src="{% static 'assets/img/testimonial/author-9.png' %}" alt="image">
+                            </div>
+
+                            <div class="content">
+                                <p>
+                                    <span class="quote-top">
+                                        <i class="fal fa-quote-left"></i>
+                                    </span>
+                                    Sedut perspiciatis unde omniiste natus errorsit voluptatem accusant doloremque
+                                    laudantium, totam rem aperiam, eaque ipsa quae ab ilinventore veritatis et quasi
+                                    architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
+                                    <span class="quote-bottom">
+                                        <i class="fal fa-quote-right"></i>
+                                    </span>
+                                </p>
+                            </div>
+
+                            <div class="author">
+                                <h4>Richard E. Harrisona</h4>
+                                <span>CEO & Founder</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====== Testimonials Section end ======-->
+
+    <!--====== Client Area Start ======-->
+    
+    <!--====== Client Area End ======-->
+{% endblock content %}

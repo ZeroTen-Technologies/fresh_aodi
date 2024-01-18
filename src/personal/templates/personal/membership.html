@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>Our Membership | Africa of Our Dreams Initiative</title>
+{% endblock title %}
+
+{% block navbar %}
+
+<!-- Main Site Navigation -->
+{% include 'personal/snippets/navbar-snippet.html' %}
+
+{% endblock navbar %}
+
+
+{% block slider %}
+
+  <div class="shadow container py-4 rounded-3">
+
+    <div class="p-5 mb-1 bg-light rounded-3">
+      <div class="container-fluid py-1">
+        <h1 class="display-5 fw-bold">Our Membership &raquo</h1>
+        <p class="col-md-12 fs-6">Welcome to our membership page.</p>
+        <a href="#" class="shadow btn btn-outline-success btn-sm" type="button">Founding Trustees &raquo</a>
+      </div>
+    </div>
+
+  </div>
+
+{% endblock slider %}
+
+{% block content %}
+
+  <section class="container mt-2">
+    <div class="container px-4 py-5" id="hanging-icons">
+    
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="col d-flex align-items-start">
+        
+        <div>
+          <h2>Governing Board</h2>
+          <p>The board of governors is the highest decision-making body of the foundation and incorporates all the principal officers of the foundation made up of the founding trustees for the time being...</p>
+          <a href="{% url 'governing_board' %}" class="shadow btn btn-success">
+            Read More
+          </a>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        
+        <div>
+          <h2>Ambassadorial membership</h2>
+          <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+          <a href="{% url 'ambassadors' %}" class="shadow btn btn-success">
+            Read More
+          </a>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        
+        <div>
+          <h2>Associate membership</h2>
+          <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+          <a href="{% url 'associate_membership' %}" class="shadow btn btn-success">
+            Read More
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <section class="container mt-2">
+  <div class="row p-4">
+    <div class="shadow col-md-12 mx-auto p-5">
+      <div class="row">
+      <!-- <h4 class="fw-bold">About Africa of Our Dreams Initiative (AODI)</h4> -->
+      </div>
+      <div class="row" style="text-align: justify;">
+        <p>Africa of Our dream Initiative has two significant membership forms – Voting membership and non-voting membership. Only the foundation trustees are eligible for voting membership. They include the members of the <a href="{% url 'governing_board' %}" class="link-danger">governing boards</a>.
+        </p>
+        <p>Non-voting memberships include the <a href="{% url 'ambassadors' %}" class="link-danger">ambassadorial membership</a> and the <a href="{% url 'associate_membership' %}" class="link-danger">associate membership</a>.  The ambassadorial membership comprises the <a href="{% url 'project_facilitators' %}" class="link-danger">project facilitators</a> and <a href="{% url 'volunteers' %}" class="link-danger">volunteers</a> and is open to anyone who is committed to improving the lives of others through various humanitarian services.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Donate and Join -->
+{% include 'personal/snippets/join-snippet.html' %}
+
+{% endblock content %}
+
+{% block footer %}
+
+<!-- Footer Navigation -->
+{% include 'personal/snippets/footer-snippet.html' %}
+
+{% endblock footer %}

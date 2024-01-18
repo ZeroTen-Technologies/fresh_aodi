@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>Founding Trustees | Africa of Our Dreams Initiative</title>
+{% endblock title %}
+
+{% block navbar %}
+
+<!-- Main Site Navigation -->
+{% include 'personal/snippets/navbar-snippet.html' %}
+
+{% endblock navbar %}
+
+
+{% block slider %}
+
+  <div class="shadow container py-4 rounded-3">
+
+    <div class="p-5 mb-1 bg-light rounded-3">
+      <div class="container-fluid py-1">
+        <h1 class="display-5 fw-bold">Founding Trustees &raquo</h1>
+        <p class="col-md-12 fs-6">Welcome to the founding trustees page.</p>
+        <a href="{% url 'membership' %}" class="shadow btn btn-outline-success btn-sm" type="button">Membership &raquo</a>
+      </div>
+    </div>
+
+  </div>
+
+{% endblock slider %}
+
+{% block content %}
+
+  <section class="container mt-2">
+    <div class="container px-4 py-5" id="hanging-icons">
+    
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="col d-flex align-items-start">
+        
+        <div>
+          <h2>Board of Governors</h2>
+          <p>The board of governors is the highest decision-making body of the foundation and incorporates all the principal officers of the foundation made up of the founding trustees for the time being...</p>
+          <a href="{% url 'governing_board' %}" class="shadow btn btn-success">
+            Read More
+          </a>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        
+        <div>
+          <h2>Founding Trustees</h2>
+          <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+          <a href="{% url 'founding_trustees' %}" class="shadow btn btn-success">
+            Read More
+          </a>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        
+        <div>
+          <h2>Appointed Trustees</h2>
+          <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+          <a href="{% url 'appointed_trustees' %}" class="shadow btn btn-success">
+            Read More
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <section class="container mt-2">
+  <div class="row p-4">
+    <div class="shadow col-md-12 mx-auto p-5">
+      <div class="row">
+      <!-- <h4 class="fw-bold">About Africa of Our Dreams Initiative (AODI)</h4> -->
+      </div>
+      <div class="row" style="text-align: justify;">
+        <p>The governing board of Africa of Our Dream Initiative comprises of the board of governors, founding trustees and appointed trustees. The board of governors is the highest decision-making body of the foundation and incorporates all the principal officers of the foundation made up of the founding trustees for the time being.
+        </p>
+        <p>Meet the various board members at:</p>
+        <ul>
+          <li><a href="{% url 'governing_board' %}" class="link-danger">Board of Governors</a></li>
+          <li><a href="{% url 'founding_trustees' %}" class="link-danger">Founding Trustees</a></li>
+          <li><a href="{% url 'appointed_trustees' %}" class="link-danger">Appointed Trustees</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container mt-5">
+  <div class="container px-4 py-5" id="custom-cards">
+    <h2 class="pb-2 border-bottom">Founding Trustees</h2>
+
+    <div class="row row-cols-1 row-cols-lg-4 align-items-stretch g-4 py-5">
+      <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg">
+          <img src="{% static 'images/0chuks-1.jpg' %}">
+        <h6 class="mt-2 text-center">David Chukwuma Izuogu</h6>
+        <p class="text-center">Founder/Chairman</p>
+        </div>
+        
+        
+
+      </div>
+
+
+      <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg">
+          <img src="{% static 'images/Ileka-Chikaosolu.jpg' %}">
+        <h6 class="mt-2 text-center">Maryqueen Chikaosolu Ileka</h6>
+        <p class="text-center">Co-founding Trustee</p>
+        </div>
+
+      </div>
+
+      <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg">
+          <img src="{% static 'images/Okpala-Joy.jpg' %}">
+        <h6 class="mt-2 text-center">Joy Chinazaepkere Okpala</h6>
+        <p class="text-center">Co-Founding Trustee</p>
+        </div>
+
+      </div>
+
+      <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg">
+          <img src="{% static 'images/Ogbuebulu-Ebuka1.jpg' %}">
+        <h6 class="mt-2 text-center">Joseph Chukwuebuka Oguegbulu</h6>
+        <p class="text-center">Co-founding Trustee</p>
+        </div>
+
+      </div>
+
+      <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg">
+          <img src="{% static 'images/Emeka-Okpara.jpg' %}">
+        <h6 class="mt-2 text-center">Innocent Emeka Okpara</h6>
+        <p class="text-center">Co-founding Trustee</p>
+        </div>
+
+      </div>
+
+      <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg">
+          <img src="{% static 'images/AODI-logo1.jpg' %}">
+        <h6 class="mt-2 text-center">Donald Chidozie Ojobor</h6>
+        <p class="text-center">Co-founding Trustee</p>
+        </div>
+
+      </div>
+
+      <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg">
+          <img src="{% static 'images/AODI-logo1.jpg' %}">
+        <h6 class="mt-2 text-center">Innocent Chinedu Nwoye</h6>
+        <p class="text-center">Co-founding Trustee</p>
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+<!-- Donate and Join -->
+{% include 'personal/snippets/join-snippet.html' %}
+
+{% endblock content %}
+
+{% block footer %}
+
+<!-- Footer Navigation -->
+{% include 'personal/snippets/footer-snippet.html' %}
+
+{% endblock footer %}

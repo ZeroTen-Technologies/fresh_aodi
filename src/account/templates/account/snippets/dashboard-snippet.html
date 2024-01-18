@@ -1,0 +1,366 @@
+<!-- Dashboard Navigation -->
+{% if request.user.is_superuser %}
+<div class="container-fluid pb-3">
+    <div class="d-grid gap-3" style="grid-template-columns: 0.5fr 2fr;">
+      <div class="bg-light border rounded-3">
+        
+        <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
+    <ul class="list-unstyled ps-0">
+      <li class="mb-1">
+        {% if request.get_full_path == '/dashboard' %}
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+          Dashboard
+        </button>
+        <div class="collapse show" id="home-collapse">
+        {% else %}
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+          Dashboard
+        </button>
+        <div class="collapse" id="home-collapse">
+        {% endif %}
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="{% url 'dashboard' %}" class="link-dark rounded">Overview</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        {% if request.get_full_path == '/all_post' %}
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="true">
+          Blog
+        </button>
+        <div class="collapse show" id="dashboard-collapse">
+        {% elif request.get_full_path == '/blog/create/' %}
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="true">
+          Blog
+        </button>
+        <div class="collapse show" id="dashboard-collapse">
+        {% else %}
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+          Blog
+        </button>
+        <div class="collapse" id="dashboard-collapse">
+        {% endif %}
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="{% url 'all_post' %}" class="link-dark rounded">All Post</a></li>
+            <li><a href="{% url 'blog:create' %}" class="link-dark rounded">Create Posts</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        {% if request.get_full_path == '/all_project' %}
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#project-collapse" aria-expanded="true">
+          Project
+        </button>
+        <div class="collapse show" id="project-collapse">
+          {% elif request.get_full_path == '/project/create/' %}
+          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#project-collapse" aria-expanded="true">
+          Project
+        </button>
+        <div class="collapse show" id="project-collapse">
+          {% else %}
+          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#project-collapse" aria-expanded="false">
+          Project
+        </button>
+        <div class="collapse" id="project-collapse">
+          {% endif %}
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="{% url 'all_project' %}" class="link-dark rounded">All Projects</a></li>
+            <li><a href="{% url 'project:create' %}" class="link-dark rounded">Create Projects</a></li>
+            <li><a href="{% url 'project:createprocat' %}" class="link-dark rounded">Create Project Category</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        {% if request.get_full_path == '/all_outreach' %}
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#outreaches-collapse" aria-expanded="true">
+          Outreaches
+        </button>
+        <div class="collapse show" id="outreaches-collapse">
+          {% elif request.get_full_path == '/outreach/create/' %}
+          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#outreaches-collapse" aria-expanded="true">
+          Outreaches
+        </button>
+        <div class="collapse show" id="outreaches-collapse">
+          {% else %}
+          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#outreaches-collapse" aria-expanded="false">
+          Outreaches
+        </button>
+        <div class="collapse" id="outreaches-collapse">
+          {% endif %}
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="{% url 'all_outreach' %}" class="link-dark rounded">All Outreaches</a></li>
+            <li><a href="{% url 'outreach:create' %}" class="link-dark rounded">Create Outreaches</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        {% if request.get_full_path == '/all_slider' %}
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#slider-collapse" aria-expanded="true">
+          Sliders
+        </button>
+        <div class="collapse show" id="slider-collapse">
+        {% elif request.get_full_path == '/slider/create/' %}
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#slider-collapse" aria-expanded="true">
+          Sliders
+        </button>
+        <div class="collapse show" id="slider-collapse">
+        {% else %}
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#slider-collapse" aria-expanded="false">
+          Sliders
+        </button>
+        <div class="collapse" id="slider-collapse">
+        {% endif %}
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="{% url 'all_slider' %}" class="link-dark rounded">All Sliders</a></li>
+            <li><a href="{% url 'slider:create' %}" class="link-dark rounded">Create Slider</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        {% if request.get_full_path == '/all_testimony' %}
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#testimonies-collapse" aria-expanded="true">
+          Testimonies
+        </button>
+        <div class="collapse show" id="testimonies-collapse">
+           {% elif request.get_full_path == '/testimonials/create/' %}
+           <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#testimonies-collapse" aria-expanded="true">
+          Testimonies
+        </button>
+        <div class="collapse show" id="testimonies-collapse">
+          {% else %}
+         <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#testimonies-collapse" aria-expanded="false">
+          Testimonies
+        </button>
+        <div class="collapse" id="testimonies-collapse">
+          {% endif %}
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="{% url 'all_testimony' %}" class="link-dark rounded">All Testimonies</a></li>
+            <li><a href="{% url 'testimonials:create' %}" class="link-dark rounded">Create Testimonies</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#media-collapse" aria-expanded="false">
+          Media
+        </button>
+        <div class="collapse" id="media-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="link-dark rounded">All Media</a></li>
+            <li><a href="#" class="link-dark rounded">Upload Media</a></li>
+            <li><a href="#" class="link-dark rounded">Edit Media</a></li>
+            <li><a href="#" class="link-dark rounded">Delete Media</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#donate-collapse" aria-expanded="false">
+          Donations
+        </button>
+        <div class="collapse" id="donate-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="link-dark rounded">All Donations</a></li>
+            <li><a href="#" class="link-dark rounded">Create Donation</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+          Volunteers
+        </button>
+        <div class="collapse" id="orders-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="link-dark rounded">All Volunteers</a></li>
+            <li><a href="#" class="link-dark rounded">Create Volunteerism</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        {% if request.get_full_path == '/all_users' %}
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#users-collapse" aria-expanded="true">
+          Users
+        </button>
+        <div class="collapse show" id="users-collapse">
+          {% else %}
+          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#users-collapse" aria-expanded="false">
+          Users
+        </button>
+        <div class="collapse" id="users-collapse">
+          {% endif %}
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="{% url 'all_users' %}" class="link-dark rounded">All Users</a></li>
+            <li><a href="#" class="link-dark rounded">Add New User</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        {% if request.get_full_path == '/all_trustee' %}
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#founding-collapse" aria-expanded="true">
+          Trustees/Membership
+        </button>
+        <div class="collapse show" id="founding-collapse">
+          {% elif request.get_full_path == '/trustees/create/' %}
+          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#founding-collapse" aria-expanded="true">
+          Trustees/Membership
+        </button>
+        <div class="collapse show" id="founding-collapse">
+          {% elif request.get_full_path == '/my_trustee' %}
+          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#founding-collapse" aria-expanded="true">
+          Trustees/Membership
+        </button>
+        <div class="collapse show" id="founding-collapse">
+          {% else %}
+          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#founding-collapse" aria-expanded="false">
+          Trustees/Membership
+        </button>
+        <div class="collapse" id="founding-collapse">
+          {% endif %}
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="{% url 'all_trustee' %}" class="link-dark rounded">All Trustees/Membership</a></li>
+            <li><a href="{% url 'my_trustee' %}" class="link-dark rounded">My Trustees/Membership</a></li>
+            <li><a href="{% url 'trustees:create' %}" class="link-dark rounded">Add Trustees/Membership</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="border-top my-3"></li>
+      <li class="mb-1">
+        {% if request.get_full_path == '/all_contact' %}
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="true">
+          Account
+        </button>
+        <div class="collapse show" id="account-collapse">
+        {% elif request.get_full_path == '/all_subscribers' %}
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="true">
+          Account
+        </button>
+        <div class="collapse show" id="account-collapse">
+        {% else %}
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+          Account
+        </button>
+        <div class="collapse" id="account-collapse">
+        {% endif %}
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="{% url 'account' %}" class="link-dark rounded">Profile</a></li>
+            <li><a href="{% url 'all_contact' %}" class="link-dark rounded">Contacts</a></li>
+            <li><a href="{% url 'all_subscribers' %}" class="link-dark rounded">Subscribers</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+{% elif request.user.is_admin %}
+
+This is for admin
+
+{% elif request.user.is_staff %}
+
+This is for staff
+
+{% else %}
+
+<div class="container-fluid pb-3">
+    <div class="d-grid gap-3" style="grid-template-columns: 0.5fr 2fr;">
+      <div class="bg-light border rounded-3">
+        
+        <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
+    <ul class="list-unstyled ps-0">
+      <li class="mb-1">
+        {% if request.get_full_path == '/dashboard' %}
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+          Dashboard
+        </button>
+        <div class="collapse show" id="home-collapse">
+        {% else %}
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+          Dashboard
+        </button>
+        <div class="collapse" id="home-collapse">
+        {% endif %}
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="{% url 'dashboard' %}" class="link-dark rounded">Overview</a></li>
+          </ul>
+        </div>
+      </li>
+      
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#donate-collapse" aria-expanded="false">
+          Donations
+        </button>
+        <div class="collapse" id="donate-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="link-dark rounded">New</a></li>
+            <li><a href="#" class="link-dark rounded">Processed</a></li>
+            <li><a href="#" class="link-dark rounded">Shipped</a></li>
+            <li><a href="#" class="link-dark rounded">Returned</a></li>
+          </ul>
+        </div>
+      </li>
+       <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+          Volunteers
+        </button>
+        <div class="collapse" id="orders-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="link-dark rounded">New</a></li>
+            <li><a href="#" class="link-dark rounded">Processed</a></li>
+            <li><a href="#" class="link-dark rounded">Shipped</a></li>
+            <li><a href="#" class="link-dark rounded">Returned</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        {% if request.get_full_path == '/my_trustee' %}
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#founding-collapse" aria-expanded="true">
+          Trustees/Membership
+        </button>
+        <div class="collapse show" id="founding-collapse">
+          {% elif request.get_full_path == '/trustees/create/' %}
+          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#founding-collapse" aria-expanded="true">
+          Trustees/Membership
+        </button>
+        <div class="collapse show" id="founding-collapse">
+          {% else %}
+          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#founding-collapse" aria-expanded="false">
+          Trustees/Membership
+        </button>
+        <div class="collapse" id="founding-collapse">
+          {% endif %}
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="{% url 'my_trustee' %}" class="link-dark rounded">My Trustees/Membership</a></li>
+            <li><a href="{% url 'trustees:create' %}" class="link-dark rounded">Add Trustees/Membership</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="border-top my-3"></li>
+      <li class="mb-1">
+      
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+          Account
+        </button>
+        <div class="collapse" id="account-collapse">
+       
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="{% url 'account' %}" class="link-dark rounded">Profile</a></li>
+            
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

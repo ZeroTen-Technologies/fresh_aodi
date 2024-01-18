@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>Our Constitution | Africa of Our Dreams Initiative</title>
+{% endblock title %}
+
+{% block navbar %}
+
+<!-- Main Site Navigation -->
+{% include 'personal/snippets/navbar-snippet.html' %}
+
+{% endblock navbar %}
+
+
+{% block slider %}
+
+  <div class="shadow container py-4">
+
+    <div class="p-5 mb-1 bg-light rounded-3">
+      <div class="container-fluid py-1">
+        <h1 class="display-5 fw-bold">Our Constitution &raquo</h1>
+        <p class="col-md-12 fs-6">Vision & Mission: To build a new Africa where individuals will thrive and have access to the necessary things of life by promoting, supporting and investing in health, education and opportunities as well as in human capital for sustained prosperity.</p>
+        <a href="{% url 'aims_and_obj' %}" class="shadow btn btn-outline-success btn-sm">Aims & Objectives &raquo</a>
+        <a href="{% url 'about' %}" class="shadow btn btn-success btn-sm" >About Us &raquo</a>
+      </div>
+    </div>
+
+  </div>
+
+{% endblock slider %}
+
+{% block content %}
+
+  
+
+  <section class="container mt-1">
+  <div class="row p-4">
+    <div class="col-md-12">
+      <div class="row">
+      <!-- <h4 class="fw-bold">About Africa of Our Dreams Initiative (AODI)</h4> -->
+      </div>
+      <div class="row" style="text-align: justify;">
+        <p>The activities of Africa of Our Dream is fully regulated by her constitution. The constitution is designed to ensure high accountability and transparency in the running of the foundation. The board of governors and trustees of Africa of Our Dream Initiative will continue to ensure that the aims and objectives of the foundation are fully actualized for sustained prosperity of the African people and the world at large.</p>
+        <p>We, therefore, employ all people of goodwill to support our initiatives, <a href="#" class="link-danger">donate</a> or join our <a href="{% url 'ambassadors' %}" class="link-danger">Ambassadors membership</a> as a volunteer or project facilitator.</p>
+        <p>The constitution of the foundation can be accessed <a href="{% static 'pdfs/AODI_constitution.pdf' %}" target="_blank" class="link-danger">here.</a> </p>
+      </div>
+    </div>
+    <!-- <div class="col-md-5">
+      <img src="{% static 'images/afrik3.jpg' %}">
+    </div> -->
+  </div>
+</section>
+
+
+<!-- Donate and Join -->
+{% include 'personal/snippets/join-snippet.html' %}
+
+{% endblock content %}
+
+{% block footer %}
+
+<!-- Footer Navigation -->
+{% include 'personal/snippets/footer-snippet.html' %}
+
+{% endblock footer %}

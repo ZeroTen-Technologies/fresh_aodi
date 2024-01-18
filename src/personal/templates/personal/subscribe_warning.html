@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>Newsletter | Africa of Our Dreams Initiative</title>
+{% endblock title %}
+
+{% block navbar %}
+
+<!-- Main Site Navigation -->
+{% include 'personal/snippets/navbar-snippet.html' %}
+
+{% endblock navbar %}
+
+{% block content %}
+
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      {% if request.session.wrong_email %}
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Oops!</h1>
+        <h3 class="fw-light">{{ request.session.name_newsletter }} Your Email {{ request.session.wrong_email }} is a wrong email format</h3>
+        <p class="lead text-muted">Please enter an email with the email@example.com format. Thanks</p>
+        <p>
+          <a href="{% url 'home' %}" class="btn btn-success my-2">Return to Home</a>
+          <!-- <a href="#" class="btn btn-secondary my-2">Secondary action</a> -->
+        </p>
+      </div>
+      {% else %}
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Oops!</h1>
+        <h3 class="fw-light">{{ request.session.name_newsletter }} Your Email {{ request.session.email_newsletter }} Already exists in our records</h3>
+        <p class="lead text-muted">You don't need to resubscribe to our newsletter. Thanks</p>
+        <p>
+          <a href="{% url 'home' %}" class="btn btn-success my-2">Return to Home</a>
+          <!-- <a href="#" class="btn btn-secondary my-2">Secondary action</a> -->
+        </p>
+      </div>
+      {% endif %}
+      
+    </div>
+  </section>
+{% endblock content %}
+
+{% block footer %}
+<!-- Footer Navigation -->
+{% include 'personal/snippets/footer-snippet.html' %}
+{% endblock footer %}

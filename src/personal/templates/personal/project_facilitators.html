@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>Project Facilitators | Africa of Our Dreams Initiative</title>
+{% endblock title %}
+
+{% block navbar %}
+
+<!-- Main Site Navigation -->
+{% include 'personal/snippets/navbar-snippet.html' %}
+
+{% endblock navbar %}
+
+
+{% block slider %}
+
+  <div class="shadow container py-4 rounded-3">
+
+    <div class="p-5 mb-1 bg-light rounded-3">
+      <div class="container-fluid py-1">
+        <h1 class="display-5 fw-bold">Project Facilitators &raquo</h1>
+        <p class="col-md-12 fs-6">Welcome to the project facilitators page.</p>
+        <a href="{% url 'ambassadors' %}" class="shadow btn btn-outline-success btn-sm" type="button">ambassadorial membership &raquo</a>
+        <a href="{% url 'volunteers' %}" class="shadow btn btn-success btn-sm" type="button">Volunteer &raquo</a>
+      </div>
+    </div>
+
+  </div>
+
+{% endblock slider %}
+
+{% block content %}
+
+  
+  <section class="container mt-2">
+  <div class="row p-4">
+    <div class="shadow col-md-12 mx-auto p-5">
+      <div class="row">
+      <!-- <h4 class="fw-bold">About Africa of Our Dreams Initiative (AODI)</h4> -->
+      </div>
+      <div class="row" style="text-align: justify;">
+        <p>AODI project facilitators work with the trustees to execute all the charity projects and campaign as agreed by the <a href="{% url 'founding_trustees' %}" class="link-danger">board of trustees</a> and <a href="{% url 'governing_board' %}">board of governors</a>. A particular project can have more than one facilitator. However, each facilitator must work closely with both the trustee heading the project and other volunteers to ensure the aims and objectives of the foundation are achieved.</p>
+        <p>As a project facilitator, you will be an eye of the foundation in the society and help identify what you think the foundation should look into, design a proposal for such project and submit to the trustees for consideration. The submitted proposal is only an idea and a guide to help make necessary initial enquiry and assessment before a decision on the execution of such project is made by the board of trustees. The project facilitators will also work closely with the trustees heading our various projects to execute them. All projects must be in line with the aims and objectives of the foundation and the execution of the projects must conform to the directives of the trustees.</p>
+        <p>The project facilitators are not expected to make any financial commitment to the foundation aside from the charity services they render. However, if they deem it necessary and have the capacity, they are welcomed to support the foundation financially.  All expenses by the project facilitator made on behalf of the foundation for facilitating any project must be as approved by the foundation. Out of pocket expenses are refunded by the foundation provided they are within the approved costs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container mt-5">
+  <div class="container px-4 py-5" id="custom-cards">
+    <h2 class="pb-2 border-bottom">Project Facilitators</h2>
+
+    <div class="row row-cols-1 row-cols-lg-4 align-items-stretch g-4 py-5">
+      <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg">
+          <img src="{% static 'images/Chidimma-Nwachukwu-e1537734153477-275x300.jpg' %}">
+        <h6 class="mt-2 text-center">Chidinma Austria Nwachukwu</h6>
+        <p class="text-center">Project Facilitator</p>
+        </div>
+      
+
+      </div>
+
+
+       <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg">
+          <img src="{% static 'images/AODI-logo1.jpg' %}">
+        <h6 class="mt-2 text-center">Okonkwo Onyeka Augustine</h6>
+        <p class="text-center">Project Facilitator</p>
+        </div>
+
+      </div>
+
+      <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg">
+          <img src="{% static 'images/AODI-logo1.jpg' %}">
+        <h6 class="mt-2 text-center">Apollos Anyogu Onwuka</h6>
+        <p class="text-center">Project Facilitator</p>
+        </div>
+
+      </div>
+
+     
+    </div>
+  </div>
+</section>
+
+<!-- Donate and Join -->
+{% include 'personal/snippets/join-snippet.html' %}
+
+{% endblock content %}
+
+{% block footer %}
+
+<!-- Footer Navigation -->
+{% include 'personal/snippets/footer-snippet.html' %}
+
+{% endblock footer %}

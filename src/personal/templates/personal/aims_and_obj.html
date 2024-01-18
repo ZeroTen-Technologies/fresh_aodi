@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>Aims & Objectives | Africa of Our Dreams Initiative</title>
+{% endblock title %}
+
+{% block navbar %}
+
+<!-- Main Site Navigation -->
+{% include 'personal/snippets/navbar-snippet.html' %}
+
+{% endblock navbar %}
+
+
+{% block slider %}
+
+  <div class="shadow container py-4">
+
+    <div class="p-5 mb-1 bg-light rounded-3">
+      <div class="container-fluid py-1">
+        <h1 class="display-5 fw-bold">Aims & Objectives &raquo</h1>
+        <p class="col-md-12 fs-6">Vision & Mission: To build a new Africa where individuals will thrive and have access to the necessary things of life by promoting, supporting and investing in health, education and opportunities as well as in human capital for sustained prosperity.</p>
+        <a href="{% url 'our_constitution' %}" class="shadow btn btn-outline-success btn-sm">Our Constitution &raquo</a>
+        <a href="{% url 'about' %}" class="shadow btn btn-success btn-sm">About Us &raquo</a>
+      </div>
+    </div>
+
+  </div>
+
+{% endblock slider %}
+
+{% block content %}
+
+  
+
+  <section class="container mt-1">
+  <div class="row p-4">
+    <div class="col-md-12">
+      <div class="row">
+      <!-- <h4 class="fw-bold">About Africa of Our Dreams Initiative (AODI)</h4> -->
+      </div>
+      <div class="row" style="text-align: justify;">
+        <p>Building a new Africa would mean creating a society where individuals will be able to thrive and at least have access to the basic things of life. The goals of AODI is based on the premise that if we invest in health, education and opportunities as well as in the human capital, invariably we lay the foundation for sustained prosperity. To this end, the aims and objectives of AODI is summarily</p>
+        <blockquote class="font-monospace">“Youth and women empowerment through education and capacity building.”</blockquote>
+        <p>The foundation shall pursue this objective in four different ways as listed below bearing in mind the great quote by Joseph Addison.</p>
+        <figure>
+          <blockquote class="font-monospace">
+            <p>Education is a companion which no misfortune can depress, no crime can destroy, no enemy can alienate, no despotism can enslave. At home, a friend, abroad, an introduction, in solitude a solace and in society an ornament. It chastens vice, it guides virtue, it gives at once grace and government to genius. Without it, what is man? A splendid slave, a reasoning savage.</p>
+          </blockquote>
+          <figcaption class="blockquote-footer">
+             <cite title="Source Title">Joseph Addison</cite>
+          </figcaption>
+        </figure>
+        <ul class="list-unstyled">
+          <li class="fw-bold">Women empowerment:
+            <ul>
+              <li>The foundation shall run activities to empower the girl child and women in general while campaigning against gender-based violence and promoting gender balance, education for the girl child, equal opportunity for girls with their male counterparts.</li>
+            </ul>
+          </li>
+
+          <li class="fw-bold">Youth empowerment:
+            <ul>
+              <li>The foundation shall run activities that aim to empower less privileged youths in the society. The action plan will include but not limited to skill workshops, training on skills related to information communication technology (ICT), entrepreneurial activities etc., all aimed at human capacity development.</li>
+            </ul>
+          </li>
+
+          <li class="fw-bold">Access to quality education:
+            <ul>
+              <li>The foundation shall run activities that encourage children and adults to acquire sound education. Where possible, education materials, infrastructures, equipment, scholarships information, and engagements that would guarantee quality education for all will be carried out. Emphasis will be on Science Technology Engineering and Mathematics (STEM) education.</li>
+            </ul>
+          </li>
+
+          <li class="fw-bold">Access to quality Medicare:
+            <ul>
+              <li>The foundation shall run activities that would help the less privileged access quality healthcare. Where possible, medicine and medical equipment can be provided among other things to ensure that people have access to quality health care irrespective of their status. Priority will be given to terminal as well as communicable diseases.</li>
+            </ul>
+          </li>
+        </ul>
+        <p>In the pursuit of our causes, AODI will always remember other great quotes relating to education by great men like kofi Annan, Nelson Mandela and Malcom X.</p>
+        <figure class="text-end">
+          <blockquote class="font-monospace">
+            <p>Knowledge is power. Information is liberating. Education is the premise of progress, in every society, in every family.</p>
+          </blockquote>
+          <figcaption class="blockquote-footer">
+            <cite title="Source Title">kofi Annan</cite>
+          </figcaption>
+        </figure>
+
+        <figure class="text-end">
+          <blockquote class="font-monospace">
+            <p>Education is the most powerful weapon which you can use to change the world.</p>
+          </blockquote>
+          <figcaption class="blockquote-footer">
+            <cite title="Source Title">Nelson Mandela</cite>
+          </figcaption>
+        </figure>
+
+        <figure class="text-end">
+          <blockquote class="font-monospace">
+            <p>Education is the passport to the future, for tomorrow belongs to those who prepare for it today.</p>
+          </blockquote>
+          <figcaption class="blockquote-footer">
+            <cite title="Source Title">Malcolm X</cite>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    <!-- <div class="col-md-5">
+      <img src="{% static 'images/afrik3.jpg' %}">
+    </div> -->
+  </div>
+</section>
+
+
+<!-- Donate and Join -->
+{% include 'personal/snippets/join-snippet.html' %}
+
+{% endblock content %}
+
+{% block footer %}
+
+<!-- Footer Navigation -->
+{% include 'personal/snippets/footer-snippet.html' %}
+
+{% endblock footer %}

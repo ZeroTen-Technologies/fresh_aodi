@@ -1,0 +1,34 @@
+{% load static %}
+<style type="text/css">
+	.red {
+        color: #EC4432;
+      }
+</style>
+<header>
+    
+
+      <div class=" py-2 border-bottom"> 
+      	<b class="red" style="margin-left: 80px; font-size: 14px;">Phone: <b class="text-dark"> (+234) 08809090</b></b> |
+     <b class="red" style="font-size: 14px;">Email: <b class="text-dark"> admin@africaofourdreaminitiative.org</b></b> 
+    </div>
+
+    <nav id="navbar_top" class=" navbar navbar-expand-md navbar-light ">
+     <div class="container">
+       <a class="navbar-brand" href="{% url 'home' %}">
+         <img class="bi me-2" width="50" height="50" src="{% static 'images/newlogo.jpg' %}">
+       </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      <div class="collapse navbar-collapse" id="main_nav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a id="nav_link_active" class="nav-link text-danger fw-bold fs-6" href="{% url 'home' %}"> Home </a></li>
+        <li class="nav-item"><a id="nav_link" class="nav-link fw-bold fs-6" href="{% url 'about' %}"> About Us</a></li>
+        <li class="nav-item"><a id="nav_link1" class="nav-link fw-bold fs-6" href="{% url 'volunteers' %}"> Become a Volunteer</a></li>
+        <li class="nav-item"><a id="nav_link2" class="nav-link fw-bold fs-6" href="#"> Gallery </a></li>
+        <li class="nav-item"><a id="nav_link3" class="nav-link fw-bold fs-6" href="{% url 'blog' %}"> Blog </a></li>
+        <li class="nav-item"><a id="nav_link4" class="nav-link fw-bold fs-6" href="{% url 'contact' %}"> Contact Us </a></li>
+      </ul>
+      </div> <!-- navbar-collapse.// -->
+     </div> <!-- container-fluid.// -->
+    </nav>

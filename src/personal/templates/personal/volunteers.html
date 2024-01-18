@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>Volunteers | Africa of Our Dreams Initiative</title>
+{% endblock title %}
+
+{% block navbar %}
+
+<!-- Main Site Navigation -->
+{% include 'personal/snippets/navbar-snippet.html' %}
+
+{% endblock navbar %}
+
+
+{% block slider %}
+
+  <div class="shadow container py-4 rounded-3">
+
+    <div class="p-5 mb-1 bg-light rounded-3">
+      <div class="container-fluid py-1">
+        <h1 class="display-5 fw-bold">Volunteers &raquo</h1>
+        <p class="col-md-12 fs-6">Welcome to the volunteers page.</p>
+        <a href="{% url 'ambassadors' %}" class="shadow btn btn-outline-success btn-sm" type="button">ambassadorial membership &raquo</a>
+        <a href="{% url 'project_facilitators' %}" class="shadow btn btn-success btn-sm" type="button">Project Facilitators &raquo</a>
+      </div>
+    </div>
+
+  </div>
+
+{% endblock slider %}
+
+{% block content %}
+
+  <section class="container mt-2">
+    <div class="container px-4 py-5" id="hanging-icons">
+    
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="col d-flex align-items-start">
+        
+        <div>
+          <h2>Board of Governors</h2>
+          <p>The board of governors is the highest decision-making body of the foundation and incorporates all the principal officers of the foundation made up of the founding trustees for the time being...</p>
+          <a href="{% url 'governing_board' %}" class="shadow btn btn-success">
+            Read More
+          </a>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        
+        <div>
+          <h2>Founding Trustees</h2>
+          <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+          <a href="{% url 'founding_trustees' %}" class="shadow btn btn-success">
+            Read More
+          </a>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        
+        <div>
+          <h2>Appointed Trustees</h2>
+          <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+          <a href="{% url 'appointed_trustees' %}" class="shadow btn btn-success">
+            Read More
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <section class="container mt-2">
+  <div class="row p-4">
+    <div class="shadow col-md-12 mx-auto p-5">
+      <div class="row">
+      <!-- <h4 class="fw-bold">About Africa of Our Dreams Initiative (AODI)</h4> -->
+      </div>
+      <div class="row" style="text-align: justify;">
+        <p>Another way to get involved with the Africa of Our Dream Initiative (AODI) is to apply to be a volunteer which is another form of non-voting but ambassadorial membership. As a volunteer, you will help the foundation execute her projects as your time would permit following set out guidelines by the trustees.
+        </p>
+        <p>Been a volunteer qualifies you to apply to be an ambassador of the foundation as stipulated in the foundation <a href="{% url 'our_constitution' %}">constitution</a>. Volunteers must carry themselves in such a manner that would bring honor and respect to the foundation and the society at large. A dishonorable act can cost you to forfeit this position and the foundation reserve the right to revert its AMBASSADORIAL honor conferred on you.</p>
+        <p>As volunteers also form part of the cornerstones of the foundation, they are required to ensure they have the time commitment required to volunteer. AODI cannot function effectively without the good work of our volunteers. To say a thank you for their wonderful commitments in improving lives with the foundation, we honour our volunteers with the ambassadorial honour as stipulated in the constitution. </p>
+        <p>Volunteers are not expected to make any financial commitment to the foundation aside from the charity services they render. However, if they deem it necessary and have the capacity, they are welcomed to support the foundation financially.  All expenses by the project facilitator made on behalf of the foundation for volunteering in any project must be as approved by the foundation. Out of pocket expenses made by volunteers are refunded by the foundation provided they are within the approved costs and that the project facilitator approved of it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container mt-5">
+  <div class="container px-4 py-5" id="custom-cards">
+    <h2 class="pb-2 border-bottom">Volunteers [Coming Soon!]</h2>
+
+    
+
+
+    </div>
+  </div>
+</section>
+
+<!-- Donate and Join -->
+{% include 'personal/snippets/join-snippet.html' %}
+
+{% endblock content %}
+
+{% block footer %}
+
+<!-- Footer Navigation -->
+{% include 'personal/snippets/footer-snippet.html' %}
+
+{% endblock footer %}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>Newsletter | Africa of Our Dreams Initiative</title>
+{% endblock title %}
+
+{% block navbar %}
+
+<!-- Main Site Navigation -->
+{% include 'personal/snippets/navbar-snippet.html' %}
+
+{% endblock navbar %}
+
+{% block content %}
+
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Thank you {{ hello.name }} for subscribing to our newsletter</h1>
+        <p class="lead text-muted">Kindly check your email: {{ hello.email }} and be sure to add us as a contact to avoid the emails we shall be sending to you doesn't land on your spam folder. Thanks</p>
+        <p>
+          <a href="{% url 'home' %}" class="btn btn-success my-2">Return to Home</a>
+        </p>
+      </div>
+    </div>
+  </section>
+{% endblock content %}
+
+{% block footer %}
+<!-- Footer Navigation -->
+{% include 'personal/snippets/footer-snippet.html' %}
+{% endblock footer %}

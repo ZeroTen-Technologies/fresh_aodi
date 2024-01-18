@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>Contact | Africa of Our Dreams Initiative</title>
+{% endblock title %}
+
+{% block navbar %}
+
+<!-- Main Site Navigation -->
+{% include 'personal/snippets/navbar-snippet.html' %}
+
+{% endblock navbar %}
+
+{% block content %}
+
+<section class="text-center container">
+    <div class="row">
+          {% if success_message %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <strong>{{hi.fname}}!</strong> {{ success_message }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          {% endif %}
+    </div>
+    <div class="row py-lg-5">
+      <div class="col-md-12 mx-auto">
+        <h1 class="fw-light">Contact Us </h1>
+        <p class="lead text-muted">Thank you for visiting the Africa of Our Dream Initiative website.</p>
+        <p class="lead text-muted">For inquiries about our activities, volunteering positions, donations or facilitating any of our projects, please kindly fill out the form below, and we will get back to you as soon as possible.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4 border p-5">
+        <h4>Alternative Email</h4>
+        <p>You can send us email at</p>
+        <p>admin@africaofourdreaminitiative.org</p>
+        <p>officialaodi@gmail.com</p>
+      </div>
+      <div class="col-sm-4 border p-5">
+        <h4>Our Nigerian Address</h4>
+        <p>c/o Apollos Studio, UNN</p>
+        <p>Student Multipurpose Building,
+          University of Nigeria, Nsukka, 410001
+        Enugu State, Nigeria.</p>
+      </div>
+      <div class="col-sm-4 border p-5">
+        <h4>Our Uk Address</h4>
+        <p>Wolfson College Barton Road,
+          CB3 9BB Cambridge,
+        Cambridgeshire, United Kingdom</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container mt-5 mb-5">
+    <div class="row">
+          
+    </div>
+    <div class="row">
+      <div class="col-md-8 mx-auto">
+        <form action="{% url 'contact' %}" method="post">{% csrf_token%}
+          <div class="mb-3">
+        <label for="exampleFormControlName" class="form-label">Name</label>
+        <input name="fname" type="text" class="form-control" id="exampleFormControlName" placeholder="enter full name">
+        </div>
+        <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input name="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+        <div class="mb-3">
+        <label for="exampleFormControlSubject" class="form-label">Subject</label>
+        <input name="subject" type="text" class="form-control" id="exampleFormControlSubject" placeholder="Subject...">
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+          <textarea name="message" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <div class="d-grid gap-2">
+          <button class="shadow btn btn-outline-success" type="submit">Send</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </section>
+{% endblock content %}
+
+{% block footer %}
+<!-- Footer Navigation -->
+{% include 'personal/snippets/footer-snippet.html' %}
+{% endblock footer %}

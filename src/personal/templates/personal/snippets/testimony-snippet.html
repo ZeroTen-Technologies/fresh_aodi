@@ -1,0 +1,127 @@
+{% load static %}
+<section class="shadow container mt-5 ">
+  <div class="row">
+   <h2 class="pb-2 border-bottom fw-bold">Testimonials</h2>
+  </div>
+  <div id="carouselExampleDark" class="carousel carousel-dark slide mt-5 mb-5" data-bs-ride="carousel">
+  <!-- <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div> -->
+  <div class="carousel-inner">
+   
+
+   
+    <div class="carousel-item active">
+      <div class="container">
+        <div class="row">
+          {% for testimonial in testimonials|slice:":3" %}
+          <div class="col-sm-4">
+            <!-- <img src="{% static 'images/afrik.jpg' %}" class="d-block w-50 h-50 rounded-circle mx-auto" alt="..."> -->
+            <figure>
+              <blockquote class="blockquote">
+                <p>{{testimonial.body|truncatechars:200|safe}}</p>
+              </blockquote>
+              <figcaption class="blockquote-footer">
+                <a href="{% url 'testimonials:detail' testimonial.slug %}" class="link-danger">{{ testimonial.author.first_name }} {{testimonial.author.last_name}}</a> <cite title="Source Title"> {{testimonial.id}}</cite>
+              </figcaption>
+            </figure>
+          </div>
+          {% endfor %}
+          
+
+        </div>
+      </div>
+    </div>
+   {% if testimonials.count < 3 %}
+
+   {% else %}
+    <div class="carousel-item">
+      <div class="container">
+        <div class="row">
+          {% for testimonial in testimonials|slice:"3:6" %}
+          <div class="col-sm-4">
+            <!-- <img src="{% static 'images/afrik.jpg' %}" class="d-block w-50 h-50 rounded-circle mx-auto" alt="..."> -->
+            <figure>
+              <blockquote class="blockquote">
+                <p>{{testimonial.body|truncatechars:200|safe}}</p>
+              </blockquote>
+              <figcaption class="blockquote-footer">
+                <a href="{% url 'testimonials:detail' testimonial.slug %}" class="link-danger">{{ testimonial.author.first_name }} {{testimonial.author.last_name}}</a> <cite title="Source Title"> {{testimonial.id}}</cite>
+              </figcaption>
+            </figure>
+          </div>
+          {% endfor %}
+          
+
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+    {% if testimonials.count < 6 %}
+
+   {% else %}
+    <div class="carousel-item">
+      <div class="container">
+        <div class="row">
+          {% for testimonial in testimonials|slice:"6:9" %}
+          <div class="col-sm-4">
+            <!-- <img src="{% static 'images/afrik.jpg' %}" class="d-block w-50 h-50 rounded-circle mx-auto" alt="..."> -->
+            <figure>
+              <blockquote class="blockquote">
+                <p>{{testimonial.body|truncatechars:200|safe}}</p>
+              </blockquote>
+              <figcaption class="blockquote-footer">
+                <a href="{% url 'testimonials:detail' testimonial.slug %}" class="link-danger">{{ testimonial.author.first_name }} {{testimonial.author.last_name}}</a> <cite title="Source Title"> {{testimonial.id}}</cite>
+              </figcaption>
+            </figure>
+          </div>
+          {% endfor %}
+          
+
+        </div>
+      </div>
+    </div>
+    {% endif %}
+{% if testimonials.count < 9 %}
+
+{% else %}
+    <div class="carousel-item">
+      <div class="container">
+        <div class="row">
+          {% for testimonial in testimonials|slice:"9:12" %}
+          <div class="col-sm-4">
+            <!-- <img src="{% static 'images/afrik.jpg' %}" class="d-block w-50 h-50 rounded-circle mx-auto" alt="..."> -->
+            <figure>
+              <blockquote class="blockquote">
+                <p>{{testimonial.body|truncatechars:200|safe}}</p>
+              </blockquote>
+              <figcaption class="blockquote-footer">
+                <a href="{% url 'testimonials:detail' testimonial.slug %}" class="link-danger">{{ testimonial.author.first_name }} {{testimonial.author.last_name}}</a> <cite title="Source Title"> {{testimonial.id}}</cite>
+              </figcaption>
+            </figure>
+          </div>
+          {% endfor %}
+          
+
+        </div>
+      </div>
+    </div>
+{% endif %}
+  </div>
+  {% if testimonials.count < 1 %}
+
+  {% else %}
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+  {% endif%}
+</div>
+</section>

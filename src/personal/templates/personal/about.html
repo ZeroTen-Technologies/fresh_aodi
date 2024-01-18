@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>About | Africa of Our Dreams Initiative</title>
+{% endblock title %}
+
+{% block navbar %}
+
+<!-- Main Site Navigation -->
+{% include 'personal/snippets/navbar-snippet.html' %}
+
+{% endblock navbar %}
+
+
+{% block slider %}
+
+  <div class="shadow container py-4 rounded-3">
+
+    <div class="p-5 mb-1 bg-light rounded-3">
+      <div class="container-fluid py-1">
+        <h1 class="display-5 fw-bold">About Us &raquo</h1>
+        <p class="col-md-12 fs-6">Vision & Mission: To build a new Africa where individuals will thrive and have access to the necessary things of life by promoting, supporting and investing in health, education and opportunities as well as in human capital for sustained prosperity.</p>
+        <a href="{% url 'aims_and_obj' %}" class="shadow btn btn-outline-success btn-sm" type="button">Aims and Objectives &raquo</a>
+        <a href="{% url 'our_constitution' %}" class="shadow btn btn-success btn-sm" >Our Constitution &raquo</a>
+      </div>
+    </div>
+
+  </div>
+
+{% endblock slider %}
+
+{% block content %}
+
+  
+
+  <section class="container mt-2">
+  <div class="row p-4">
+    <div class="col-md-12">
+      <div class="row">
+      <!-- <h4 class="fw-bold">About Africa of Our Dreams Initiative (AODI)</h4> -->
+      </div>
+      <div class="row" style="text-align: justify;">
+        <p>Africa of Our Dream Initiative (AODI) was founded by David Chukwuma Izuogu as an expansion of his charity academy, “Chucks Academy” at the University of Nigeria, Nsukka. The Academy which was founded in September 2008 focused on helping undergraduate science students at the University of Nigeria, Nsukka on chemistry-related courses by organising well-attended tutorial classes especially for the first-year students. Having recorded high success among students he tutored, David continued his services until his graduation in 2012 and up to 2014 when he finished the National Youth Service Scheme.
+        </p>
+        <p>Arriving at the University of Cambridge in 2017 as a PhD <a href="https://www.cambridge-africa.cam.ac.uk/initiatives/cambridge-africa-phd-scheme/cambridge-africa-scholars-2017-18/" target="_blank" class="link-danger">Cambridge Trust Scholar</a> and having the passion for changing the world and helping the less privileged, David came up with the idea of expanding his long-aged charity work to a well-articulated foundation with four goals as described under <a href="{% url 'aims_and_obj' %}" class="link-danger">“Aims and Objectives”</a> section of the site which can be summarised to “empowerment through education”.
+        </p>
+        <p>The idea of Africa of Our Dream Initiative was born sooner than later as one of the ways of giving back to the community for the generous funding David has received both as a Japanese MEXT scholar at Tohoku University, Japan and as a Cambridge Trust Scholar at the University of Cambridge coupled with his childhood experience growing up from a poor background. Thanks to the right set of people David had met at the University of Cambridge and the enabling environment Cambridge had created.
+        </p>
+        <p>Believing in the power of teamwork, David reached out to like minds who are passionate in contributing their quota to change the world especially for the Africa continent to join him in building a platform where women, youths and the less privileged can be given the much-sorted attention. The team now make up the <a href="{% url 'founding_trustees' %}" class="link-danger">founding trustees</a> as well as the apponted trustees of the foundation.</p>
+      </div>
+    </div>
+    <!-- <div class="col-md-5">
+      <img src="{% static 'images/afrik3.jpg' %}">
+    </div> -->
+  </div>
+</section>
+
+<!-- Donate and Join -->
+{% include 'personal/snippets/join-snippet.html' %}
+
+{% endblock content %}
+
+{% block footer %}
+
+<!-- Footer Navigation -->
+{% include 'personal/snippets/footer-snippet.html' %}
+
+{% endblock footer %}
