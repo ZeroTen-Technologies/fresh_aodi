@@ -1,0 +1,137 @@
+{% extends 'app.html' %}
+{% load static %}
+{% block title %}
+<title>Newsletter | Africa of Our Dreams Initiative</title>
+{% endblock title %}
+
+
+{% block content %}
+ <!--====== Service Details Start ======-->
+    <section class="service-details section-gap">
+        <div class="container">
+            <div class="row">
+                <!-- Dettails Content -->
+                <div class="col-lg-12">
+                    <div class="service-details-content">
+                        <div class="main-thumb mb-40">
+                           
+                        </div>
+                        <div class="row py-lg-5">
+      {% if request.session.wrong_email %}
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Oops!</h1>
+        <h3 class="fw-light">{{ request.session.name_newsletter }} Your Email {{ request.session.wrong_email }} is a wrong email format</h3>
+        <p class="lead text-muted">Please enter an email with the email@example.com format. Thanks</p>
+        <p>
+          <a href="{% url 'home' %}" class="btn btn-success my-2">Return to Home</a>
+          <!-- <a href="#" class="btn btn-secondary my-2">Secondary action</a> -->
+        </p>
+      </div>
+      {% else %}
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Oops!</h1>
+        <h3 class="fw-light">{{ request.session.name_newsletter }} Your Email {{ request.session.email_newsletter }} Already exists in our records</h3>
+        <p class="lead text-muted">You don't need to resubscribe to our newsletter. Thanks</p>
+        <p>
+          <a href="{% url 'home' %}" class="btn btn-success my-2">Return to Home</a>
+          <!-- <a href="#" class="btn btn-secondary my-2">Secondary action</a> -->
+        </p>
+      </div>
+      {% endif %}
+      
+    </div>
+                        
+
+                    </div>
+                    
+                        <!-- End Faq LOOP -->
+                    </div>
+                </div>
+                <!-- Sidebar -->
+                
+            </div>
+        </div>
+    </section>
+    <!--====== Service Details End ======-->
+
+    <!--====== CTA Start ======-->
+    <section class="cta-aection">
+        <div class="container">
+            <div class="cta-wrap bg-img-c" style="background-image: url(assets/img/lines/16.png);">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="cta-content text-center">
+                            <div class="section-title both-border mb-30">
+                                <span class="title-tag">Get Involved</span>
+                                <h2 class="title">Join our growing community!</h2>
+                            </div>
+                            <a href="membership" class="main-btn main-btn-3">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====== CTA Start ======-->
+
+    <!--====== Client Area Start ======-->
+    <section class="client-section">
+        <div class="container">
+            <div class="client-slider section-gap line-top">
+                <div class="row align-items-center justify-content-between" id="clientSlider">
+                    <div class="col">
+                        <a href="#" class="client-img d-block text-center">
+                            <img src="assets/img/clients/01.png" alt="">
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="#" class="client-img d-block text-center">
+                            <img src="assets/img/clients/02.png" alt="">
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="#" class="client-img d-block text-center">
+                            <img src="assets/img/clients/03.png" alt="">
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="#" class="client-img d-block text-center">
+                            <img src="assets/img/clients/04.png" alt="">
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="#" class="client-img d-block text-center">
+                            <img src="assets/img/clients/05.png" alt="">
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="#" class="client-img d-block text-center">
+                            <img src="assets/img/clients/01.png" alt="">
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="#" class="client-img d-block text-center">
+                            <img src="assets/img/clients/02.png" alt="">
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="#" class="client-img d-block text-center">
+                            <img src="assets/img/clients/03.png" alt="">
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="#" class="client-img d-block text-center">
+                            <img src="assets/img/clients/04.png" alt="">
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="#" class="client-img d-block text-center">
+                            <img src="assets/img/clients/05.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====== Client Area End ======-->
+{% endblock content %}

@@ -87,10 +87,10 @@ def subscribe_view(request):
 	
 
 	context['hello'] = subscribe_id
-	return render(request, 'personal/subscribe.html', context)
+	return render(request, 'personal/new_subscribe.html', context)
 
 def subscribe_warning_view(request):
-	return render(request, 'personal/subscribe_warning.html', {})
+	return render(request, 'personal/new_subscribe_warning.html', {})
 
 def contact_view(request):
 	# fname = request.POST.get('fname')
@@ -145,7 +145,7 @@ def volunteers_view(request):
 	return render(request, 'personal/volunteers.html', context)
 
 def donate_view(request):
-	return render(request, 'personal/donate.html', context)
+	return render(request, 'personal/new_donate.html', context)
 
 def pay_view(request):
 	return render(request, 'personal/pay.html', context)
